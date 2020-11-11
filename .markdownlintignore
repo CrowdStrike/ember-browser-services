@@ -1,6 +1,0 @@
-CHANGELOG.md
-LICENSE.md
-
-# Dependencies
-node_modules
-smoke-tests/**/node_modules

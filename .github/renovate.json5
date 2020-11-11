@@ -29,12 +29,12 @@
         "eslint",
         "babel-eslint",
         "ember-template-lint",
-        "markdownlint-cli"
-      ]
+      ],
       "packagePatterns": [
         "eslint-plugin-.*",
         ".*typescript-eslint.*",
-        "^@commitlint\/*"
+        "^@commitlint\/*",
+        "^remark-*"
       ]
     },
     // These are dependencies that come default when

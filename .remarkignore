@@ -1,0 +1,7 @@
+CHANGELOG.md
+LICENSE.md
+
+node_modules/
+tmp/
+dist/
+vendor/

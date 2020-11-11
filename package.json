@@ -20,7 +20,7 @@
   },
   "scripts": {
     "build": "ember build --environment=production",
-    "lint:docs": "markdownlint '**/*.md'",
+    "lint:docs": "remark .",
     "lint:docs-js": "eslint . --cache --ext md",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*",
     "lint:hbs": "ember-template-lint .",
@@ -63,10 +63,17 @@
     "eslint-plugin-ember": "^9.3.0",
     "eslint-plugin-node": "^11.1.0",
     "loader.js": "^4.7.0",
-    "markdownlint-cli": "^0.24.0",
     "npm-run-all": "^4.1.5",
     "qunit-dom": "^1.5.0",
+    "remark-cli": "^9.0.0",
+    "remark-lint": "^8.0.0",
+    "remark-preset-lint-recommended": "5.0.0",
     "typescript": "^4.0.5"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended"
+    ]
   },
   "engines": {
     "node": "10.* || >= 12"
