@@ -6,33 +6,29 @@ consistent interaction with browser APIs.
 When all browser APIs are accessed via services, browser behavior is now
 stubbable in unit tests!
 
-
 This addon is written in TypeScript so that your editor will provide intellisense
 hints to guide you through usage so that you don't have to spend as much time
 looking at the documentation.
 
-
 ## Installation
 
-```
-yarn add ember-browser-services
-# or
-npm install ember-browser-services
-# or
-ember install ember-browser-services
-```
+    yarn add ember-browser-services
+    # or
+    npm install ember-browser-services
+    # or
+    ember install ember-browser-services
 
 ## Compatibility
 
-* Ember.js v3.12 or above
-* Node.js v10 or above
+*   Ember.js v3.12 or above
+*   Node.js v10 or above
 
 ## Usage
 
 Whenever you would reach for `window`, or any other browser API, inject the
 service instead.
 
-```ts
+```js
 export default class MyComponent extends Component {
   @service('browser/window') window;
 
@@ -47,9 +43,9 @@ export default class MyComponent extends Component {
 
 for fuller examples, see the tests directory.
 
-
 #### Window
-```ts
+
+```js
 import { setupBrowserFakes } from 'ember-browser-services/test-support';
 
 module('Scenario Name', function (hooks) {
@@ -66,7 +62,8 @@ module('Scenario Name', function (hooks) {
 ```
 
 #### localStorage
-```ts
+
+```js
 import { setupBrowserFakes } from 'ember-browser-services/test-support';
 
 module('Scenario Name', function (hooks) {
@@ -86,17 +83,17 @@ module('Scenario Name', function (hooks) {
 
 #### document
 
-```ts
+```js
 import { setupBrowserFakes } from 'ember-browser-services/test-support';
 
-module('Examples: How to use the browser/document service', function(hooks) {
+module('Examples: How to use the browser/document service', function (hooks) {
   setupBrowserFakes(hooks, {
     document: {
       title: 'Foo',
     },
   });
 
-  test('title interacts separately from the real document', function(assert) {
+  test('title interacts separately from the real document', function (assert) {
     let service = this.owner.lookup('service:browser/document');
 
     assert.equal(service.title, 'Foo');
@@ -112,7 +109,6 @@ module('Examples: How to use the browser/document service', function(hooks) {
 ## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
-
 
 ## License
 

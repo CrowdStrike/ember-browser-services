@@ -28,4 +28,4 @@ jobs:
 
       # TODO: Type Tests
       - name: Type Checking
-        run: yarn tsc
+        run: yarn tsc --build

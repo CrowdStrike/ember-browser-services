@@ -1,0 +1,14 @@
+// https://www.typescriptlang.org/v2/en/tsconfig
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.compiler-options.json",
+  "compilerOptions": {
+    // allows for smaller partial tsconfigs where configuration is more relevant
+    "composite": true,
+
+    // declarations are dumped to their own directory
+    // which is gitignored, and shouldn't interfere with commits
+    "emitDeclarationOnly": true,
+    "noEmit": false
+  }
+}

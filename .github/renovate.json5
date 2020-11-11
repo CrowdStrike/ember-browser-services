@@ -29,9 +29,11 @@
         "eslint",
         "babel-eslint",
         "ember-template-lint",
+        "prettier"
       ],
       "packagePatterns": [
         "eslint-plugin-.*",
+        "eslint-config-.*",
         ".*typescript-eslint.*",
         "^@commitlint\/*",
         "^remark-*"
