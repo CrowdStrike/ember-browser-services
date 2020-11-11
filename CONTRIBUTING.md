@@ -24,3 +24,27 @@
 * Visit the dummy application at [http://localhost:4200](http://localhost:4200).
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+
+## Add a new / missing API
+
+Want to add a new API? such as document, navigator, ServiceWorker, etc?
+why weren't these addeded initially? Time. ;)
+
+inside the addon root, run `ember g service browser/navigator` where `navigator`
+is the name of the API you wish to proxy and mock in tests.
+
+then, the file only neeeds to have an import and a default export:
+
+```ts
+import { proxyService } from 'ember-browser-services/utils/proxy-service';
+
+export default proxyService(navigator);
+```
+
+This serves as the _default implementation_ that your apps will use and is only
+a Proxy to the real thing.
+
+Lastly, in `addon-test-support/index.ts`, add a registration for the new service.
+
+
+
