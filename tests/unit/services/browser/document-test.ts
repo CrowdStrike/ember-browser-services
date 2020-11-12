@@ -16,11 +16,11 @@ module('Unit | Service | browser/document', function (hooks) {
       let service = this.owner.lookup('service:browser/document');
 
       assert.equal(service.title, 'Foo');
-      assert.notEqual(service.title, document.title);
+      assert.notEqual(service.title, document.title, 'real document is unchanged');
 
       service.title = 'Bar';
       assert.equal(service.title, 'Bar');
-      assert.notEqual(service.title, document.title);
+      assert.notEqual(service.title, document.title, 'real document remains unchanged');
     });
   });
 
