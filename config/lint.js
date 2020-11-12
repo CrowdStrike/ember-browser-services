@@ -57,20 +57,20 @@ const parsers = {
 
 const configs = {
   ts: [
-      'eslint:recommended',
-      'plugin:ember/octane',
-      'plugin:decorator-position/ember',
-      'plugin:@typescript-eslint/recommended',
-      'prettier',
-      'prettier/@typescript-eslint',
-    ],
+    'eslint:recommended',
+    'plugin:ember/octane',
+    'plugin:decorator-position/ember',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'prettier/@typescript-eslint',
+  ],
   js: [
-      'eslint:recommended',
-      'plugin:ember/octane',
-      'plugin:prettier/recommended',
-      'plugin:decorator-position/ember',
-      'prettier',
-    ],
+    'eslint:recommended',
+    'plugin:ember/octane',
+    'plugin:prettier/recommended',
+    'plugin:decorator-position/ember',
+    'prettier',
+  ],
 };
 
 const plugins = {

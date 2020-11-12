@@ -7,8 +7,8 @@ module.exports = function (defaults) {
     hinting: false,
 
     'ember-cli-babel': {
-      enableTypeScriptTransform: true
-    }
+      enableTypeScriptTransform: true,
+    },
   });
 
   /*
