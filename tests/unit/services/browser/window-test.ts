@@ -23,7 +23,7 @@ module('Service | browser/window', function (hooks) {
       assert.equal(service.parent.location.href, '');
 
       // potential real ways to redirect to the login app
-      let loginPath = 'https://falcon.crowdstrike.com/login';
+      let loginPath = 'https://example.com/login';
 
       service.location.href = loginPath;
       service.parent.location.href = loginPath;

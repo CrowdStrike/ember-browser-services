@@ -9,12 +9,25 @@ module('Service | browser/local-storage', function (hooks) {
   test('it works', function (assert) {
     let service = this.owner.lookup('service:browser/local-storage');
 
-    assert.equal(service.getItem('foo'), null);
-    assert.equal(service.getItem('foo'), localStorage.getItem('foo'));
+    function assertGetSet(valueIn: unknown, expectedOut?: string | null) {
+      service.setItem('foo', valueIn);
 
-    service.setItem('foo', 'bar');
-    assert.equal(service.getItem('foo'), 'bar');
-    assert.equal(localStorage.getItem('foo'), null);
+      assert.equal(service.getItem('foo'), expectedOut);
+    }
+
+    assert.equal(service.getItem('foo'), null, 'initially is empty');
+    assert.equal(localStorage.getItem('foo'), null, 'real localStorage is also initially empty');
+
+    assertGetSet(undefined, 'undefined');
+    assertGetSet(null, 'null');
+    assertGetSet('bar', 'bar');
+    assertGetSet({}, '[object Object]');
+    assertGetSet(['a'], 'a');
+    assertGetSet([1], '1');
+    assertGetSet(['a', 'b'], 'a,b');
+    assertGetSet([{}], '[object Object]');
+
+    assert.equal(localStorage.getItem('foo'), null, 'real localStorage is unchanged');
 
     service.removeItem('foo');
     assert.equal(service.getItem('foo'), null);
