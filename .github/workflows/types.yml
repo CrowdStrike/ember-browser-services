@@ -14,3 +14,18 @@ on:
 env:
   CI: true
 
+jobs:
+  types:
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
+    name: Type Checking
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: volta-cli/action@v1
+
+      - run: yarn install --frozen-lockfile
+
+      # TODO: Type Tests
+      - name: Type Checking
+        run: yarn tsc
