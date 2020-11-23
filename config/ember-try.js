@@ -63,6 +63,16 @@ module.exports = async function () {
         },
       },
       {
+        name: 'embroider-tests',
+        npm: {
+          devDependencies: {
+            '@embroider/core': '*',
+            '@embroider/webpack': '*',
+            '@embroider/compat': '*',
+          },
+        },
+      },
+      {
         name: 'ember-default-with-jquery',
         env: {
           EMBER_OPTIONAL_FEATURES: JSON.stringify({
