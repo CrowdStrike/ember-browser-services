@@ -1,6 +1,6 @@
 import { proxyService } from 'ember-browser-services/utils/proxy-service';
 
-interface TestLocation {
+interface TestLocation extends Partial<Location> {
   href?: string;
 }
 
