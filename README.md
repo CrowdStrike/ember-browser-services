@@ -49,6 +49,25 @@ for fuller examples, see the tests directory.
 import { setupBrowserFakes } from 'ember-browser-services/test-support';
 
 module('Scenario Name', function (hooks) {
+  setupBrowserFakes(hooks, { window: true });
+
+  test('is at crowdstrike.com', function (assert) {
+    let service = this.owner.lookup('service:browser/window');
+
+    // somewhere in a component or route or service
+    // windowService.location = '/';
+    assert.equal(service.location.href, '/'); // => succeeds
+  });
+});
+```
+
+
+Alternatively, specific APIs of the `window` can be stubbed with an object
+
+```js
+import { setupBrowserFakes } from 'ember-browser-services/test-support';
+
+module('Scenario Name', function (hooks) {
   setupBrowserFakes(hooks, {
     window: { location: { href: 'https://crowdstrike.com' } },
   });
@@ -69,7 +88,7 @@ import { setupBrowserFakes } from 'ember-browser-services/test-support';
 module('Scenario Name', function (hooks) {
   setupBrowserFakes(hooks, { localStorage: true });
 
-  test('is at crowdstrike.com', function (assert) {
+  test('local storage service works', function (assert) {
     let service = this.owner.lookup('service:browser/local-storage');
 
     assert.equal(service.getItem('foo'), null);
