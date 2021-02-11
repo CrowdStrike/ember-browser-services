@@ -24,7 +24,6 @@ jobs:
     strategy:
       matrix:
         node:
-        - "10"
         - "12"
         - "14"
     steps:
@@ -45,7 +44,6 @@ jobs:
     strategy:
       matrix:
         node:
-        - "10"
         - "12"
         - "14"
 
@@ -57,7 +55,7 @@ jobs:
 
       - run: yarn install --no-lockfile
 
-      - name: Test with ${{ matrix.node }}
+      - name: Test with Node ${{ matrix.node }}
         run: yarn test
 
   try-scenarios:

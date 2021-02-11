@@ -102,7 +102,7 @@
     ]
   },
   "engines": {
-    "node": "10.* || >= 12"
+    "node": "12.* || >= 14"
   },
   "ember": {
     "edition": "octane"
@@ -111,7 +111,7 @@
     "configPath": "tests/dummy/config"
   },
   "volta": {
-    "node": "10.23.0",
+    "node": "12.20.2",
     "yarn": "1.22.10"
   }
 }
