@@ -5,7 +5,7 @@ import { proxyService } from 'ember-browser-services/utils/proxy-service';
 const DocumentProxyService = proxyService(document);
 
 /**
- * In order to have thorough testing, we should only interact with the window
+ * In order to have thorough testing, we should only interact with the document
  * (and other browser APIs) via a service.
  *
  * We can control, mock, and override the services, but we can't do so with
