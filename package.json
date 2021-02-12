@@ -38,6 +38,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "release": {
+    "branches": ["main"],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
