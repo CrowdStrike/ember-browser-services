@@ -122,6 +122,7 @@ module.exports = {
         'node/no-missing-import': 'off',
         'node/no-missing-require': 'off',
         'node/no-unsupported-features/es-syntax': 'off',
+        'ember/no-test-support-import': 'off',
       },
     },
   ],

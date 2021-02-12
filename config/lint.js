@@ -58,7 +58,7 @@ const parsers = {
 const configs = {
   ts: [
     'eslint:recommended',
-    'plugin:ember/octane',
+    'plugin:ember/recommended',
     'plugin:decorator-position/ember',
     'plugin:@typescript-eslint/recommended',
     'prettier',
@@ -66,7 +66,7 @@ const configs = {
   ],
   js: [
     'eslint:recommended',
-    'plugin:ember/octane',
+    'plugin:ember/recommended',
     'plugin:prettier/recommended',
     'plugin:decorator-position/ember',
     'prettier',
