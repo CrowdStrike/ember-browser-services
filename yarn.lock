@@ -9966,9 +9966,9 @@ qunit-dom@^1.6.0:
     ember-cli-babel "^7.23.0"
     ember-cli-version-checker "^5.1.1"
 
-qunit@^2.13.0:
+qunit@^2.14.0:
   version "2.14.0"
-  resolved "https://registry.npmjs.org/qunit/-/qunit-2.14.0.tgz#6f913903e71ebe24ef4a4dada2b796fb52285051"
+  resolved "https://registry.yarnpkg.com/qunit/-/qunit-2.14.0.tgz#6f913903e71ebe24ef4a4dada2b796fb52285051"
   integrity sha512-CYfenbgdpmhl2Ql2rDrrj0felY4h8k6lYhtWwGBCLL4qQC33YOj0psV8MWo85L1i0SIOmEDRXkFopWnGCLmf7g==
   dependencies:
     commander "6.2.0"
