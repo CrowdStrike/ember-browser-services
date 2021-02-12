@@ -53,6 +53,7 @@
         "ember-maybe-import-regenerator",
         "ember-resolver",
         "ember-source",
+        "ember-cli-page-title"
       ]
     },
     {
@@ -64,7 +65,7 @@
         "ember-cli-dependency-checker",
         "ember-cli-inject-live-reload",
         "ember-cli-sri",
-        "ember-cli-terser",
+        "ember-cli-terser"
       ]
     },
     {
@@ -75,7 +76,8 @@
         "ember-try",
         "ember-source-channel-url",
         "ember-qunit",
-        "npm-run-all",
+        "qunit",
+        "npm-run-all"
       ]
     }
   ]
