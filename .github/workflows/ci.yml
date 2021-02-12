@@ -93,19 +93,19 @@ jobs:
         run: node_modules/.bin/ember try:one ${{ matrix.ember-try-scenario }} --skip-cleanup
 
 
-  # publish:
-  #   name: Release
-  #   runs-on: ubuntu-latest
-  #   if: github.ref == 'refs/heads/master'
-  #   needs: [tests]
+  publish:
+    name: Release
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    needs: [tests, floating-dependencies, try-scenarios]
 
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: volta-cli/action@v1
-  #     - run: yarn install
+    steps:
+      - uses: actions/checkout@v2
+      - uses: volta-cli/action@v1
+      - run: yarn install
 
-  #     - name: Release
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-  #         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-  #       run: yarn semantic-release
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: yarn semantic-release
