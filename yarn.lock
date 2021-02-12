@@ -5457,9 +5457,9 @@ ember-page-title@^6.2.1:
   dependencies:
     ember-cli-babel "^7.22.1"
 
-ember-qunit@^5.1.1:
+ember-qunit@^5.1.2:
   version "5.1.2"
-  resolved "https://registry.npmjs.org/ember-qunit/-/ember-qunit-5.1.2.tgz#72ce175f5d1c96a40fe810928c4d4a822a2e2c60"
+  resolved "https://registry.yarnpkg.com/ember-qunit/-/ember-qunit-5.1.2.tgz#72ce175f5d1c96a40fe810928c4d4a822a2e2c60"
   integrity sha512-mrnFaUhAJWkJWeRZKajLuuRmKsifRrhAla1sQAfIiuh7OCVY1eqFvSUFzLR7/WgdNwPrUzEOOx39MdVRZBd/7A==
   dependencies:
     broccoli-funnel "^3.0.3"
@@ -9966,9 +9966,9 @@ qunit-dom@^1.6.0:
     ember-cli-babel "^7.23.0"
     ember-cli-version-checker "^5.1.1"
 
-qunit@^2.13.0:
+qunit@^2.14.0:
   version "2.14.0"
-  resolved "https://registry.npmjs.org/qunit/-/qunit-2.14.0.tgz#6f913903e71ebe24ef4a4dada2b796fb52285051"
+  resolved "https://registry.yarnpkg.com/qunit/-/qunit-2.14.0.tgz#6f913903e71ebe24ef4a4dada2b796fb52285051"
   integrity sha512-CYfenbgdpmhl2Ql2rDrrj0felY4h8k6lYhtWwGBCLL4qQC33YOj0psV8MWo85L1i0SIOmEDRXkFopWnGCLmf7g==
   dependencies:
     commander "6.2.0"
