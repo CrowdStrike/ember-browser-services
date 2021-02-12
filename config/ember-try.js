@@ -71,7 +71,7 @@ module.exports = async function () {
         },
       },
       {
-        name: 'embroider-tests',
+        name: 'embroider',
         npm: {
           devDependencies: {
             '@embroider/core': '*',
