@@ -4,6 +4,7 @@ name: CI
 #  - https://github.com/NullVoxPopuli/eslint-plugin-decorator-position/blob/master/.github/workflows/lint.yml
 #  - https://github.com/NullVoxPopuli/ember-autostash-modifier/blob/master/.github/workflows/ci.yml
 #  - https://github.com/emberjs/ember-test-helpers/blob/master/.github/workflows/ci-build.yml
+#  - https://github.com/NullVoxPopuli/ember-jsqr/blob/master/.github/workflows/tests.yml
 on:
   pull_request:
   push:
@@ -60,7 +61,7 @@ jobs:
 
   try-scenarios:
     if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
-    name: "Try: ${{ matrix.ember-try-scenario }}"
+    name: "Compatibility"
     runs-on: ubuntu-latest
     needs: tests
 
@@ -78,7 +79,6 @@ jobs:
           - ember-canary
           - embroider-tests
           - ember-classic
-          - ember-default-with-jquery
     steps:
       - uses: actions/checkout@v2
       - uses: volta-cli/action@v1
