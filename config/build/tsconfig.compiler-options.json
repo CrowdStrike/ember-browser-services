@@ -1,0 +1,54 @@
+// https://www.typescriptlang.org/v2/en/tsconfig
+{
+  "compilerOptions": {
+    // Babel handles transpiling, not tsc
+    "target": "ESNext",
+    "module": "ESNext",
+    "experimentalDecorators": true,
+
+    // Many npm modules are not distributed as actual modules
+    "allowSyntheticDefaultImports": true,
+
+    // Some of these overlap with @typescript-eslint a bit, but we can fail faster
+    // by also having the type checker check these (tightens the feedback loop).
+    //
+    // -- cleanliness
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": false,
+    // -- correctness
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "importsNotUsedAsValues": "error", // enforces type imports when imports are not used as values
+    // -- footgun prevention
+    "strictPropertyInitialization": true,
+    "noFallthroughCasesInSwitch": true,
+
+    // noEmitOnError will "break the build" like a traditional statically typed language
+    "noEmitOnError": false,
+
+    // default to not transpiling to js every save
+    // "noEmit": false,
+
+    // forward source maps to babel
+    "inlineSourceMap": true,
+    "inlineSources": true,
+
+    // Full Typescript library
+    "allowJs": false,
+    // checkJs conflicts with noImplicitAny
+    "checkJs": false,
+
+    // Most bundlers now-a-days have node/node-like module resolution
+    "moduleResolution": "node",
+
+    // NOTE: specifying "paths" here is not inherited by TS projects
+    //       as the "extends" option does not resolve paths when the baseUrl changes.
+    //
+    //       Each ts project will have some duplication with all the upward relative paths
+    //       referencing addons within the monorepo.
+    // "paths": {},
+  }
+}

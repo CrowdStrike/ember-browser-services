@@ -26,6 +26,5 @@ jobs:
 
       - run: yarn install --frozen-lockfile
 
-      # TODO: Type Tests
       - name: Type Checking
-        run: yarn tsc
+        run: yarn tsc --build

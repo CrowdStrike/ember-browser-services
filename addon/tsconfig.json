@@ -1,0 +1,11 @@
+{
+  "extends": "../tsconfig.compiler-options.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declarationDir": "../declarations",
+    "paths": {
+      "ember-browser-services": ["."],
+      "ember-browser-services/*": ["./*"]
+    }
+  }
+}

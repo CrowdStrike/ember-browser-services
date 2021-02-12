@@ -6,6 +6,11 @@
 /dist/
 /tmp/
 
+# typescript output
+*.tsbuildinfo
+/declarations
+/tests/dummy/declarations
+
 # dependencies
 /bower_components/
 /node_modules/
@@ -13,6 +18,7 @@
 # misc
 /coverage/
 !.*
+.eslintcache
 
 # ember-try
 /.node_modules.ember-try/
