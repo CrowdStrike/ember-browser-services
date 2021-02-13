@@ -1,6 +1,7 @@
 import { FakeDocumentService, TestDocument } from './-private/document';
 import { FakeLocalStorageService } from './-private/local-storage';
 import { FakeWindowService, TestWindow } from './-private/window';
+import { FakeNavigatorService } from './-private/navigator';
 import { maybeMake } from './-private/-helpers';
 
 import type Service from '@ember/service';
@@ -10,6 +11,7 @@ type Fakes = {
   window?: boolean | TestWindow | typeof Service;
   localStorage?: boolean;
   document?: boolean | TestDocument | typeof Service;
+  navigator?: boolean;
 };
 
 export function setupBrowserFakes(hooks: NestedHooks, options: Fakes): void {
@@ -27,6 +29,10 @@ export function setupBrowserFakes(hooks: NestedHooks, options: Fakes): void {
 
     if (options.localStorage) {
       this.owner.register('service:browser/local-storage', FakeLocalStorageService);
+    }
+
+    if (options.navigator) {
+      this.owner.register('service:browser/navigator', FakeNavigatorService);
     }
   });
 }
