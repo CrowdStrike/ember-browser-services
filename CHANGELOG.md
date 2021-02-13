@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/CrowdStrike/ember-browser-services/compare/v1.0.0...v1.0.1) (2021-02-13)
+
+
+### Bug Fixes
+
+* **ci:** disable persist-credentials option to actions/checkout ([c5fd21c](https://github.com/CrowdStrike/ember-browser-services/commit/c5fd21ce5a869828530dcad6216a6288c8c96662))
+
 # 1.0.0 (2021-02-13)
 
 
