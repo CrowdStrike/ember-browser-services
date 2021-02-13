@@ -1,6 +1,6 @@
 {
   "name": "ember-browser-services",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Browser APIs as services for easier testing",
   "keywords": [
     "ember-addon",
@@ -38,7 +38,9 @@
     "registry": "https://registry.npmjs.org"
   },
   "release": {
-    "branches": ["main"],
+    "branches": [
+      "main"
+    ],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
