@@ -101,6 +101,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
       - uses: volta-cli/action@v1
       - run: yarn install
 
