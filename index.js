@@ -4,7 +4,7 @@ module.exports = {
   name: require('./package').name,
 
   // enable file-watching / live-reload
-  // isDevelopingAddon: () => true,
+  isDevelopingAddon: () => true,
 
   options: {
     'ember-cli-babel': {
