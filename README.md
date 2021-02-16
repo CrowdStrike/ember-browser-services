@@ -43,6 +43,32 @@ export default class MyComponent extends Component {
 
 for fuller examples, see the tests directory.
 
+As with any service, if the default implementation is not suitable for testing,
+it may be swapped out during the test.
+
+```js
+import Service from '@ember/service';
+
+module('Scenario Name', function (hooks) {
+  test('rare browser API', function (assert) {
+    let called = false;
+
+    this.owner.register(
+      'service:browser/window',
+      class TestWindow extends Service {
+        rareBrowserApi() {
+          called = true;
+        }
+      },
+    );
+
+    this.owner.lookup('service:browser/window').rareBrowserApi();
+
+    assert.ok(called, 'the browser api was called');
+  });
+});
+```
+
 #### Window
 
 ```js
