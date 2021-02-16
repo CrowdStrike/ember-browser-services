@@ -151,6 +151,54 @@ module('Examples: How to use the browser/document service', function (hooks) {
 });
 ```
 
+## What about ember-window-mock?
+
+[ember-window-mock](https://github.com/kaliber5/ember-window-mock) offers much
+of the same feature set as ember-browser-services.
+
+The main differences being:
+ - ember-window-mock
+   - smaller API surface
+   - uses imports for `window` instead of a service
+   - all browser APIs must be accessed from the imported `window` to be mocked / stubbed
+   - adding additional behavior to the test version of an object requires something like:
+
+       ```js
+       import window from 'ember-window-mock';
+
+       // ....
+       window.location = new TestLocation();
+       window.parent.location = window.location;
+       ```
+
+ - ember-browser-services
+   - uses services instead of imports
+   - multiple top-level browser APIs, instead of just `window`
+   - any changes to a service's implementation during a test are discarded after the test finishes
+   - adding additional behavior to the test version of an object requires something like:
+
+      ```js
+      this.owner.register(
+        'service:browser/window',
+        class extends Service {
+          location = new TestLocation();
+
+          parent = this;
+        },
+      );
+      ```
+   - because of the ability to register custom services during tests,
+     if app authors want to customize their own implementation of test services, that can be done
+     without a PR to the addon
+   - there is an object short-hand notation for customizing browser APIs via `setupBrowserFakes`
+     (demonstrated in the above examples)
+
+Similarities / both addons:
+ - use proxies to fallback to default browser API behavior
+ - provide default stubs for commonly tested behavior (`location`, `localStorage`)
+
+
+
 ## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
