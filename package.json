@@ -67,7 +67,7 @@
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@ember/optional-features": "^2.0.0",
-    "@ember/test-helpers": "^2.2.0",
+    "@ember/test-helpers": "^2.2.1",
     "@glimmer/component": "^1.0.3",
     "@glimmer/tracking": "^1.0.3",
     "@semantic-release/changelog": "^5.0.1",
