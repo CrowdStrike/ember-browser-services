@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/CrowdStrike/ember-browser-services/compare/v1.0.2...v1.1.0) (2021-02-22)
+
+
+### Features
+
+* add normal object-style stubbing to the navigator ([3e50c60](https://github.com/CrowdStrike/ember-browser-services/commit/3e50c600dcce24ffeb9513b048dbfb42b464a9bf))
+* add support for the navigator ([dc34355](https://github.com/CrowdStrike/ember-browser-services/commit/dc3435520823e4354daab32c6122b523d7a68697))
+
 ## [1.0.2](https://github.com/CrowdStrike/ember-browser-services/compare/v1.0.1...v1.0.2) (2021-02-16)
 
 
