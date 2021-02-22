@@ -126,6 +126,35 @@ module('Scenario Name', function (hooks) {
 });
 ```
 
+#### navigator
+
+```js
+// An example test from ember-jsqr's tests
+module('Scenario Name', function (hooks) {
+  setupApplicationTest(hooks);
+  setupBrowserFakes(hooks, {
+    navigator: {
+      mediaDevices: {
+        getUserMedia: () => ({ getTracks: () => [] }),
+      },
+    },
+  });
+
+  test('the camera can be turned on and then off', async function (assert) {
+    let selector = '[data-test-single-camera-demo] button';
+
+    await visit('/docs/single-camera');
+    await click(selector);
+
+    assert.dom(selector).hasText('Stop Camera', 'the camera is now on');
+
+    await click(selector);
+
+    assert.dom(selector).hasText('Start Camera', 'the camera has been turned off');
+  });
+});
+```
+
 #### document
 
 ```js

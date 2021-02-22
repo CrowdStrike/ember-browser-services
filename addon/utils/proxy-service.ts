@@ -1,8 +1,6 @@
 import Service from '@ember/service';
 
-interface Class<T> {
-  new (...args: unknown[]): T;
-}
+import type { Class } from 'ember-browser-services/types';
 
 /**
  * Allows Services to behave as Proxy objects for real objects, such as
