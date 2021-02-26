@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/CrowdStrike/ember-browser-services/compare/v1.1.0...v1.1.1) (2021-02-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-htmlbars to ^5.6.0 ([455b0b3](https://github.com/CrowdStrike/ember-browser-services/commit/455b0b351218da31322c3ad12f9aee384c115fb5))
+
 # [1.1.0](https://github.com/CrowdStrike/ember-browser-services/compare/v1.0.2...v1.1.0) (2021-02-22)
 
 
