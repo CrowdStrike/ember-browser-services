@@ -69,4 +69,4 @@ jobs:
         fetch-depth: 0
 
     - uses: volta-cli/action@v1
-    - uses: wagoid/commitlint-github-action@v3.0.1
+    - uses: wagoid/commitlint-github-action@v3.0.6
