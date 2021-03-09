@@ -1,5 +1,8 @@
 # ember-browser-services
 
+[![CI](https://github.com/CrowdStrike/ember-browser-services/actions/workflows/ci.yml/badge.svg)](https://github.com/CrowdStrike/ember-browser-services/actions/workflows/ci.yml)
+[![npm version](https://badge.fury.io/js/ember-browser-services.svg)](https://badge.fury.io/js/ember-browser-services)
+
 `ember-browser-services` is a collection of Ember Services that allow for
 consistent interaction with browser APIs.
 
