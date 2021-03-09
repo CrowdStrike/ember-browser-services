@@ -60,7 +60,7 @@
   },
   "dependencies": {
     "ember-cli-babel": "^7.24.0",
-    "ember-cli-htmlbars": "^5.6.2",
+    "ember-cli-htmlbars": "^5.6.4",
     "ember-cli-typescript": "^4.1.0"
   },
   "devDependencies": {
