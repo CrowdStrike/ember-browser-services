@@ -18,6 +18,8 @@ module('Service | browser/navigator', function (hooks) {
     test('it is about equal the real thing', async function (assert) {
       let service = getNavigatorService(this.owner);
 
+      assert.ok(service, 'service exists');
+      assert.ok(service.mediaDevices, 'api on service exists');
       assert.equal(service.mediaDevices, navigator.mediaDevices);
     });
   });
