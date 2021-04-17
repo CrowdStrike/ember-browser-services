@@ -5,6 +5,14 @@ import { setupTest } from 'ember-qunit';
 module('Unit | Service | browser/document', function (hooks) {
   setupTest(hooks);
 
+  module('accessing the service when not under test', function () {
+    test('it is about equal the real thing', async function (assert) {
+      let service = this.owner.lookup('service:browser/document');
+
+      assert.equal(service.body, document.body);
+    });
+  });
+
   module('Examples: How to use the browser/document service', function (hooks) {
     setupBrowserFakes(hooks, {
       document: {

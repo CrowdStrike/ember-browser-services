@@ -5,6 +5,14 @@ import { setupTest } from 'ember-qunit';
 module('Service | browser/window', function (hooks) {
   setupTest(hooks);
 
+  module('accessing the service when not under test', function () {
+    test('it is about equal the real thing', async function (assert) {
+      let service = this.owner.lookup('service:browser/window');
+
+      assert.equal(service.location, window.location);
+    });
+  });
+
   module('Examples', function (hooks) {
     setupBrowserFakes(hooks, {
       window: {
