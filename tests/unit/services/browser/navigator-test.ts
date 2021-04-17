@@ -14,6 +14,14 @@ function getNavigatorService(owner: ApplicationInstance) {
 module('Service | browser/navigator', function (hooks) {
   setupTest(hooks);
 
+  module('accessing the service when not under test', function () {
+    test('it is about equal the real thing', async function (assert) {
+      let service = getNavigatorService(this.owner);
+
+      assert.equal(service.mediaDevices, navigator.mediaDevices);
+    });
+  });
+
   module('for config: true', function (hooks) {
     setupBrowserFakes(hooks, { navigator: true });
 
