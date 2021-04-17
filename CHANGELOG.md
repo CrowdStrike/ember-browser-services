@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/CrowdStrike/ember-browser-services/compare/v1.1.5...v1.1.6) (2021-04-17)
+
+
+### Bug Fixes
+
+* **navigator:** add app re-export ([7a9db4d](https://github.com/CrowdStrike/ember-browser-services/commit/7a9db4dc9afa62f5b3a20754747897f53aadf746))
+
 ## [1.1.5](https://github.com/CrowdStrike/ember-browser-services/compare/v1.1.4...v1.1.5) (2021-04-17)
 
 
