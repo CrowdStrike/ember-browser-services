@@ -1,3 +1,10 @@
+## [1.1.8](https://github.com/CrowdStrike/ember-browser-services/compare/v1.1.7...v1.1.8) (2021-08-31)
+
+
+### Bug Fixes
+
+* **npm:** remove unneeded files from npm package ([ee0914c](https://github.com/CrowdStrike/ember-browser-services/commit/ee0914cc9e35db88dbd42ba1f0abdc73faa8c733))
+
 ## [1.1.7](https://github.com/CrowdStrike/ember-browser-services/compare/v1.1.6...v1.1.7) (2021-08-31)
 
 
