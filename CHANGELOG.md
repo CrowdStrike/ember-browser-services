@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/CrowdStrike/ember-browser-services/compare/v1.1.8...v2.0.0) (2021-09-09)
+
+
+### Features
+
+* utilize ember-window-mock for the underlying provider ([659f20f](https://github.com/CrowdStrike/ember-browser-services/commit/659f20f702873c942d6476301730107c71a566c4))
+
+
+### BREAKING CHANGES
+
+* invalid hrefs will throw an error
+
 ## [1.1.8](https://github.com/CrowdStrike/ember-browser-services/compare/v1.1.7...v1.1.8) (2021-08-31)
 
 
