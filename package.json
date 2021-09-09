@@ -61,7 +61,8 @@
   "dependencies": {
     "ember-cli-babel": "^7.26.6",
     "ember-cli-htmlbars": "^5.7.1",
-    "ember-cli-typescript": "^4.2.1"
+    "ember-cli-typescript": "^4.2.1",
+    "ember-window-mock": "^0.7.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
@@ -132,7 +133,8 @@
     "remark-lint": "^8.0.0",
     "remark-preset-lint-recommended": "^5.0.0",
     "semantic-release": "^17.4.7",
-    "typescript": "^4.4.2"
+    "typescript": "^4.4.2",
+    "qunit-console-grouper": "^0.3.0"
   },
   "remarkConfig": {
     "plugins": [

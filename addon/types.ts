@@ -11,3 +11,13 @@ export type NavigatorService = typeof _NavigatorService;
 export interface Class<T> {
   new (...args: unknown[]): T;
 }
+
+// https://stackoverflow.com/a/51365037/356849
+/* eslint-disable @typescript-eslint/ban-types */
+export type RecursivePartial<T> = {
+  [P in keyof T]?: T[P] extends (infer U)[]
+    ? RecursivePartial<U>[]
+    : T[P] extends object
+    ? RecursivePartial<T[P]>
+    : T[P];
+};

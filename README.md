@@ -44,33 +44,60 @@ export default class MyComponent extends Component {
 
 ### Testing
 
-for fuller examples, see the tests directory.
+_for fuller examples, see the tests directory_
 
-As with any service, if the default implementation is not suitable for testing,
-it may be swapped out during the test.
 
-```js
-import Service from '@ember/service';
+There are two types of stubbing you may be interested in when working with browser services
+ - service overriding
 
-module('Scenario Name', function (hooks) {
-  test('rare browser API', function (assert) {
-    let called = false;
+    As with any service, if the default implementation is not suitable for testing,
+    it may be swapped out during the test.
 
-    this.owner.register(
-      'service:browser/window',
-      class TestWindow extends Service {
-        rareBrowserApi() {
-          called = true;
-        }
-      },
-    );
+    ```js
+    import Service from '@ember/service';
 
-    this.owner.lookup('service:browser/window').rareBrowserApi();
+    module('Scenario Name', function (hooks) {
+      test('rare browser API', function (assert) {
+        let called = false;
 
-    assert.ok(called, 'the browser api was called');
-  });
-});
-```
+        this.owner.register(
+          'service:browser/window',
+          class TestWindow extends Service {
+            rareBrowserApi() {
+              called = true;
+            }
+          },
+        );
+
+        this.owner.lookup('service:browser/window').rareBrowserApi();
+
+        assert.ok(called, 'the browser api was called');
+      });
+    });
+    ```
+
+ - direct assignment
+
+   This approach may be useful for deep-objects are complex interactions that otherwise would be
+   hard to reproduce via normal UI interaction.
+
+   ```js
+   module('Scenario Name', function (hooks) {
+     test('rare browser API', function (assert) {
+       let service = this.owner.lookup('service:browser/window');
+       let called = false;
+
+       service.rareBrowserApi = () => (called = true);
+
+       service.rareBrowserApi();
+
+       assert.ok(called, 'the browser api was called');
+     });
+   });
+   ```
+
+
+There is also a shorthand for grouped "modules" in your tests:
 
 #### Window
 
@@ -188,6 +215,8 @@ module('Examples: How to use the browser/document service', function (hooks) {
 [ember-window-mock](https://github.com/kaliber5/ember-window-mock) offers much
 of the same feature set as ember-browser-services.
 
+_ember-browser-services builds on top of ember-window-mock and the two libraries can be used together_.
+
 The main differences being:
  - ember-window-mock
    - smaller API surface
@@ -206,8 +235,14 @@ The main differences being:
  - ember-browser-services
    - uses services instead of imports
    - multiple top-level browser APIs, instead of just `window`
-   - any changes to a service's implementation during a test are discarded after the test finishes
-   - adding additional behavior to the test version of an object requires something like:
+   - setting behavior on services can be done by simply assigning, thanks to ember-window-mock
+
+      ```js
+      let service = this.owner.lookup('service:browser/navigator');
+
+      service.someApi = someValue;
+      ```
+   - or adding additional behavior to the test version of an object can be done via familiar service extension like:
 
       ```js
       this.owner.register(
@@ -228,7 +263,7 @@ The main differences being:
 Similarities / both addons:
  - use proxies to fallback to default browser API behavior
  - provide default stubs for commonly tested behavior (`location`, `localStorage`)
-
+ - all state reset between tests
 
 
 ## Contributing

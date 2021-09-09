@@ -76,6 +76,8 @@ export function proxyService<BrowserAPI>(
 
     static create(injections: Parameters<CreateMethod>): ReturnType<CreateMethod> {
       let serviceInstance = class ProxiedService extends Service {
+        // @private
+        declare __browser_object__: BrowserAPI;
         /*
          * We cannot create the base Service, we must use a new one.
          * If we don't, we are unable to run tests in a legacy qunit environment
@@ -87,6 +89,8 @@ export function proxyService<BrowserAPI>(
       }.create(injections);
 
       let browserObject = isConstructable(ObjectToProxy) ? new ObjectToProxy() : ObjectToProxy;
+
+      serviceInstance.__browser_object__ = browserObject;
 
       return new Proxy(serviceInstance, instanceHandlerFor(browserObject));
     }

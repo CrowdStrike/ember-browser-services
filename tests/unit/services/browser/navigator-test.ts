@@ -27,10 +27,14 @@ module('Service | browser/navigator', function (hooks) {
   module('for config: true', function (hooks) {
     setupBrowserFakes(hooks, { navigator: true });
 
-    test('APIs fallback to browser APIs', function (assert) {
+    test('APIs fallback to browser APIs', async function (assert) {
       let service = getNavigatorService(this.owner);
 
-      assert.equal(service.mediaDevices.getUserMedia, navigator.mediaDevices.getUserMedia);
+      let serviceMedia = service.mediaDevices.getUserMedia;
+      let browserMedia = navigator.mediaDevices.getUserMedia;
+
+      assert.equal(serviceMedia.name, browserMedia.name);
+      assert.equal(serviceMedia.prototype, browserMedia.prototype);
     });
   });
 
