@@ -3,7 +3,7 @@ import Service from '@ember/service';
 import { proxyService } from 'ember-browser-services/utils/proxy-service';
 import { setupWindowMock } from 'ember-window-mock/test-support';
 
-import { FakeLocalStorageService, FakeSessionStorageService } from './-private/local-storage';
+import { FakeLocalStorageService, FakeSessionStorageService } from './-private/web-storage';
 
 import type { TestContext } from 'ember-test-helpers';
 import type { RecursivePartial } from 'ember-browser-services/types';
