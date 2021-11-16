@@ -155,6 +155,25 @@ module('Scenario Name', function (hooks) {
   });
 });
 ```
+#### sessionStorage
+
+```js
+import { setupBrowserFakes } from 'ember-browser-services/test-support';
+
+module('Scenario Name', function (hooks) {
+  setupBrowserFakes(hooks, { sessionStorage: true });
+
+  test('session storage service works', function (assert) {
+    let service = this.owner.lookup('service:browser/session-storage');
+
+    assert.equal(service.getItem('foo'), null);
+
+    service.setItem('foo', 'bar');
+    assert.equal(service.getItem('foo'), 'bar');
+    assert.equal(sessionStorage.getItem('foo'), null);
+  });
+});
+```
 
 #### navigator
 
