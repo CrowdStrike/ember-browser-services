@@ -3,7 +3,7 @@ import Service from '@ember/service';
 import { proxyService } from 'ember-browser-services/utils/proxy-service';
 import { setupWindowMock } from 'ember-window-mock/test-support';
 
-import { FakeLocalStorageService } from './-private/local-storage';
+import { FakeLocalStorageService, FakeSessionStorageService } from './-private/local-storage';
 
 import type { TestContext } from 'ember-test-helpers';
 import type { RecursivePartial } from 'ember-browser-services/types';
@@ -12,6 +12,7 @@ import { patchWindow } from './window-mock-augments';
 type Fakes = {
   window?: boolean | typeof Service | RecursivePartial<Window>;
   localStorage?: boolean;
+  sessionStorage?: boolean;
   document?: boolean | typeof Service | RecursivePartial<Document>;
   navigator?: boolean | RecursivePartial<Navigator>;
 };
@@ -37,6 +38,10 @@ export function setupBrowserFakes(hooks: NestedHooks, options: Fakes): void {
 
     if (options.localStorage) {
       this.owner.register('service:browser/local-storage', FakeLocalStorageService);
+    }
+
+    if (options.sessionStorage) {
+      this.owner.register('service:browser/session-storage', FakeSessionStorageService);
     }
 
     if (options.navigator) {

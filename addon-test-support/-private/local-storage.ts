@@ -1,28 +1,31 @@
 import Service from '@ember/service';
 
-type FakeLocalStorage = Record<string, string>;
+type FakeWebStorage = Record<string, string>;
 
 /**
- * Mimics the window.localStorage API
+ * Mimics the Web Storage API, as used by localStorage and sessionStorage.
  *
  */
-export class FakeLocalStorageService extends Service {
-  fakeLocalStorage: FakeLocalStorage = {};
+class FakeWebStorageService extends Service {
+  fakeWebStorage: FakeWebStorage = {};
 
   setItem(key: string, value: string): void {
-    // Everything in localStorage is a string
-    this.fakeLocalStorage[key] = `${value}`;
+    // Everything in Web Storage is a string
+    this.fakeWebStorage[key] = `${value}`;
   }
 
   getItem(key: string): string | null {
-    return this.fakeLocalStorage[key] || null;
+    return this.fakeWebStorage[key] || null;
   }
 
   removeItem(key: string): void {
-    delete this.fakeLocalStorage[key];
+    delete this.fakeWebStorage[key];
   }
 
   clear(): void {
-    this.fakeLocalStorage = {};
+    this.fakeWebStorage = {};
   }
 }
+
+export class FakeLocalStorageService extends FakeWebStorageService {}
+export class FakeSessionStorageService extends FakeWebStorageService {}
