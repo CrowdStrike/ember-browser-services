@@ -1200,6 +1200,14 @@
     resolve "^1.8.1"
     semver "^7.3.2"
 
+"@embroider/test-setup@^0.47.2":
+  version "0.47.2"
+  resolved "https://registry.npmjs.org/@embroider/test-setup/-/test-setup-0.47.2.tgz#acf3fa6a38fa97ff577be49df44d6ab30e2dc054"
+  integrity sha512-zTiNaicOeBJWQ+uAJOEg4Z4plmvF2Ckze+tMZ0sycp2o09UV72WC8s9L3pssWOGgHMV6Kl+eCfFQelWwUOqz1Q==
+  dependencies:
+    lodash "^4.17.21"
+    resolve "^1.20.0"
+
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
   resolved "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-0.4.3.tgz#9e42981ef035beb3dd49add17acb96e8ff6f394c"

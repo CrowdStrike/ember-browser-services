@@ -28,6 +28,7 @@ jobs:
         node:
         - "12"
         - "14"
+        - "16"
     steps:
     - uses: actions/checkout@v2
     - uses: volta-cli/action@v1
@@ -49,6 +50,7 @@ jobs:
         node:
         - "12"
         - "14"
+        - "16"
 
     steps:
       - uses: actions/checkout@v2
@@ -77,11 +79,13 @@ jobs:
           - ember-lts-3.16
           - ember-lts-3.20
           - ember-lts-3.24
+          - ember-lts-3.28
           - ember-release
           - ember-beta
           - ember-canary
-          # - embroider
           - ember-classic
+          - embroider-safe
+          - embroider-optimized
     steps:
       - uses: actions/checkout@v2
       - uses: volta-cli/action@v1
