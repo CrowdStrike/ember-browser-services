@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/CrowdStrike/ember-browser-services/compare/v2.0.0...v2.0.1) (2021-11-18)
+
+
+### Bug Fixes
+
+* **support:** expand and fix support ([dcd8dd6](https://github.com/CrowdStrike/ember-browser-services/commit/dcd8dd68b2c0170456e82e999513bea6beecbafa))
+
 # [2.0.0](https://github.com/CrowdStrike/ember-browser-services/compare/v1.1.8...v2.0.0) (2021-09-09)
 
 
