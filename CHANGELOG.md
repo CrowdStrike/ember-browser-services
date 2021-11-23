@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/CrowdStrike/ember-browser-services/compare/v2.0.2...v2.1.0) (2021-11-23)
+
+
+### Features
+
+* support session-storage ([ffaf626](https://github.com/CrowdStrike/ember-browser-services/commit/ffaf6263080546c2dab2f5c62db40166dfc6f3a1))
+
 ## [2.0.2](https://github.com/CrowdStrike/ember-browser-services/compare/v2.0.1...v2.0.2) (2021-11-18)
 
 
