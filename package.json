@@ -135,7 +135,7 @@
     "remark-lint": "^9.1.1",
     "remark-preset-lint-recommended": "^6.1.2",
     "semantic-release": "^17.4.7",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.3"
   },
   "remarkConfig": {
     "plugins": [
