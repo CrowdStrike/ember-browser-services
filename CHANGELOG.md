@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/CrowdStrike/ember-browser-services/compare/v2.1.2...v2.1.3) (2021-12-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-babel to ^7.26.8 ([82d4fe6](https://github.com/CrowdStrike/ember-browser-services/commit/82d4fe6e2b3d19a78f06b54dece915364435f822))
+
 ## [2.1.2](https://github.com/CrowdStrike/ember-browser-services/compare/v2.1.1...v2.1.2) (2021-12-15)
 
 
