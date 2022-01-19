@@ -72,8 +72,8 @@
     "@embroider/test-setup": "^1.0.0",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
-    "@semantic-release/changelog": "^5.0.1",
-    "@semantic-release/git": "^9.0.1",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
     "@types/ember-qunit": "^3.4.15",
     "@types/ember-resolver": "^5.0.10",
     "@types/ember__application": "^3.16.3",
@@ -134,7 +134,7 @@
     "remark-cli": "^10.0.1",
     "remark-lint": "^9.1.1",
     "remark-preset-lint-recommended": "^6.1.2",
-    "semantic-release": "^17.4.7",
+    "semantic-release": "^19.0.2",
     "typescript": "^4.5.4"
   },
   "remarkConfig": {
