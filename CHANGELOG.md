@@ -1,3 +1,25 @@
+# [3.0.0](https://github.com/CrowdStrike/ember-browser-services/compare/v2.1.4...v3.0.0) (2022-01-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-babel to ^7.26.11 ([5381024](https://github.com/CrowdStrike/ember-browser-services/commit/538102488b54da3db067bd56df2447249b29d5bd))
+
+
+### chore
+
+* drop support for classic ember ([353195f](https://github.com/CrowdStrike/ember-browser-services/commit/353195f4baff841392ec9f730fbf94ba131d5bed))
+* drop support for node 12 ([05d3a3b](https://github.com/CrowdStrike/ember-browser-services/commit/05d3a3b0760aabb749c4c4a6fcf501028c3eac5f))
+
+
+### BREAKING CHANGES
+
+* ember octane is two years old
+and is all that is supported.  This addon may still work with
+classic ember, but it will not be tested against (to help
+simplify this addon's C.I. configuration)
+* node 12 is no longer supported
+
 ## [2.1.4](https://github.com/CrowdStrike/ember-browser-services/compare/v2.1.3...v2.1.4) (2021-12-17)
 
 
