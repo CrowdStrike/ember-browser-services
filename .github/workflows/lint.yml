@@ -62,7 +62,6 @@ jobs:
     if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
     name: Tooling
     runs-on: ubuntu-latest
-    needs: [install_dependencies]
 
     steps:
       - uses: actions/checkout@v2
