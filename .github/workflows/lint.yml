@@ -67,6 +67,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: volta-cli/action@v1
+        with:
+          node-version: 14.x
       - run: yarn install
       - name: Semantic Release
         run: yarn semantic-release --dry-run
