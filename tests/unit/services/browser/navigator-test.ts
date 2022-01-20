@@ -62,6 +62,9 @@ module('Service | browser/navigator', function (hooks) {
 
         let stream = await request;
 
+        // using incorrect type on purpose (simpler assertion)
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
         assert.strictEqual(stream, 'my custom media stream');
       });
 
