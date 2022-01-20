@@ -1,6 +1,7 @@
 import { module, test } from 'qunit';
-import { setupBrowserFakes } from 'ember-browser-services/test-support';
 import { setupTest } from 'ember-qunit';
+
+import { setupBrowserFakes } from 'ember-browser-services/test-support';
 
 module('Service | browser/window', function (hooks) {
   setupTest(hooks);
@@ -9,9 +10,9 @@ module('Service | browser/window', function (hooks) {
     test('it is about equal the real thing', async function (assert) {
       let service = this.owner.lookup('service:browser/window');
 
-      assert.equal(service.location, window.location);
-      assert.equal(service.top.location, window.top?.location);
-      assert.equal(service.parent.location, window.parent.location);
+      assert.strictEqual(service.location, window.location);
+      assert.strictEqual(service.top.location, window.top?.location);
+      assert.strictEqual(service.parent.location, window.parent.location);
     });
   });
 
@@ -42,11 +43,11 @@ module('Service | browser/window', function (hooks) {
         let service = this.owner.lookup('service:browser/window');
 
         // verify that the initial config works
-        assert.equal(service.location.href, 'http://init.ial/', 'window.location.href');
-        assert.equal(
+        assert.strictEqual(service.location.href, 'http://init.ial/', 'window.location.href');
+        assert.strictEqual(
           service.parent.location.href,
           'http://init.ial/',
-          'window.parent.location.href',
+          'window.parent.location.href'
         );
 
         // potential real ways to redirect to the login app
@@ -61,8 +62,8 @@ module('Service | browser/window', function (hooks) {
         assert.notEqual(service.parent.location.href, window.parent.location.href);
 
         // verify that setting actually works
-        assert.equal(service.location.href, loginPath);
-        assert.equal(service.parent.location.href, loginPath);
+        assert.strictEqual(service.location.href, loginPath);
+        assert.strictEqual(service.parent.location.href, loginPath);
       });
     });
 
@@ -76,8 +77,8 @@ module('Service | browser/window', function (hooks) {
       test('can read from the stubbed origin', function (assert) {
         let service = this.owner.lookup('service:browser/window');
 
-        assert.equal(service.location.href, 'http://init.ial/', 'window.location.href');
-        assert.equal(service.location.origin, 'http://init.ial', 'window.location.origin');
+        assert.strictEqual(service.location.href, 'http://init.ial/', 'window.location.href');
+        assert.strictEqual(service.location.origin, 'http://init.ial', 'window.location.origin');
       });
     });
   });
@@ -96,10 +97,10 @@ module('Service | browser/window', function (hooks) {
 
         service.parent.location.href = loginPath;
 
-        assert.equal(service.location.href, loginPath);
-        assert.equal(service.location.href, service.parent.location.href);
-        assert.equal(service.location, service.parent.location);
-        assert.equal(service.location, service.top.location);
+        assert.strictEqual(service.location.href, loginPath);
+        assert.strictEqual(service.location.href, service.parent.location.href);
+        assert.strictEqual(service.location, service.parent.location);
+        assert.strictEqual(service.location, service.top.location);
       });
     });
 
@@ -115,7 +116,7 @@ module('Service | browser/window', function (hooks) {
         service.parent.location.href = '/login';
 
         assert.ok(service.location.origin);
-        assert.equal(service.location.origin, service.parent.location.origin);
+        assert.strictEqual(service.location.origin, service.parent.location.origin);
       });
     });
   });

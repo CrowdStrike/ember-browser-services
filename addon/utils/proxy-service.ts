@@ -16,7 +16,7 @@ import type { Class } from 'ember-browser-services/types';
  * @param {Object | Class} browserObject - the api to wrap a service around.
  */
 export function proxyService<BrowserAPI>(
-  ObjectToProxy: BrowserAPI | Class<BrowserAPI>,
+  ObjectToProxy: BrowserAPI | Class<BrowserAPI>
 ): typeof Service & BrowserAPI {
   type ProxyKey = BrowserAPI | Service;
   type CreateMethod = typeof Service['create'];
@@ -47,7 +47,7 @@ export function proxyService<BrowserAPI>(
         targetInstance: Service,
         prop: K,
         value: BrowserAPI[K],
-        receiver: unknown,
+        receiver: unknown
       ) {
         if (prop in targetInstance) {
           Reflect.set(targetInstance, prop, value, receiver);
@@ -101,5 +101,5 @@ export function proxyService<BrowserAPI>(
     }
   }
 
-  return (ProxyCreator as unknown) as typeof Service & BrowserAPI;
+  return ProxyCreator as unknown as typeof Service & BrowserAPI;
 }

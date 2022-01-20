@@ -42,7 +42,7 @@
     "checkJs": false,
 
     // Most bundlers now-a-days have node/node-like module resolution
-    "moduleResolution": "node",
+    "moduleResolution": "node"
 
     // NOTE: specifying "paths" here is not inherited by TS projects
     //       as the "extends" option does not resolve paths when the baseUrl changes.

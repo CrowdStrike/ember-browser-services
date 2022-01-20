@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import locationFactory from 'ember-window-mock/test-support/-private/mock/location';
 import window from 'ember-window-mock';
+import locationFactory from 'ember-window-mock/test-support/-private/mock/location';
 
 const AUGMENTS: Array<string | symbol> = ['origin'];
 
