@@ -1,8 +1,8 @@
 import { module, test } from 'qunit';
-import RSVP from 'rsvp';
 import { setupTest } from 'ember-qunit';
 
 import { setupBrowserFakes } from 'ember-browser-services/test-support';
+import RSVP from 'rsvp';
 
 import type ApplicationInstance from '@ember/application/instance';
 import type { NavigatorService } from 'ember-browser-services/types';
@@ -20,7 +20,7 @@ module('Service | browser/navigator', function (hooks) {
 
       assert.ok(service, 'service exists');
       assert.ok(service.mediaDevices, 'api on service exists');
-      assert.equal(service.mediaDevices, navigator.mediaDevices);
+      assert.strictEqual(service.mediaDevices, navigator.mediaDevices);
     });
   });
 
@@ -33,8 +33,8 @@ module('Service | browser/navigator', function (hooks) {
       let serviceMedia = service.mediaDevices.getUserMedia;
       let browserMedia = navigator.mediaDevices.getUserMedia;
 
-      assert.equal(serviceMedia.name, browserMedia.name);
-      assert.equal(serviceMedia.prototype, browserMedia.prototype);
+      assert.strictEqual(serviceMedia.name, browserMedia.name);
+      assert.strictEqual(serviceMedia.prototype, browserMedia.prototype);
     });
   });
 
@@ -62,7 +62,10 @@ module('Service | browser/navigator', function (hooks) {
 
         let stream = await request;
 
-        assert.equal(stream, 'my custom media stream');
+        // using incorrect type on purpose (simpler assertion)
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        assert.strictEqual(stream, 'my custom media stream');
       });
 
       test('can be rejected', async function (assert) {

@@ -1,25 +1,28 @@
 import { module, test } from 'qunit';
-import { setupBrowserFakes } from 'ember-browser-services/test-support';
 import { setupTest } from 'ember-qunit';
+
+import { setupBrowserFakes } from 'ember-browser-services/test-support';
 
 module('Service | browser/session-storage', function (hooks) {
   setupTest(hooks);
   setupBrowserFakes(hooks, { sessionStorage: true });
 
   test('it works', function (assert) {
+    assert.expect(14);
+
     let service = this.owner.lookup('service:browser/session-storage');
 
     function assertGetSet(valueIn: unknown, expectedOut?: string | null) {
       service.setItem('foo', valueIn);
 
-      assert.equal(service.getItem('foo'), expectedOut);
+      assert.strictEqual(service.getItem('foo'), expectedOut);
     }
 
-    assert.equal(service.getItem('foo'), null, 'initially is empty');
-    assert.equal(
+    assert.strictEqual(service.getItem('foo'), null, 'initially is empty');
+    assert.strictEqual(
       sessionStorage.getItem('foo'),
       null,
-      'real sessionStorage is also initially empty',
+      'real sessionStorage is also initially empty'
     );
 
     assertGetSet(undefined, 'undefined');
@@ -31,15 +34,15 @@ module('Service | browser/session-storage', function (hooks) {
     assertGetSet(['a', 'b'], 'a,b');
     assertGetSet([{}], '[object Object]');
 
-    assert.equal(sessionStorage.getItem('foo'), null, 'real sessionStorage is unchanged');
+    assert.strictEqual(sessionStorage.getItem('foo'), null, 'real sessionStorage is unchanged');
 
     service.removeItem('foo');
-    assert.equal(service.getItem('foo'), null);
+    assert.strictEqual(service.getItem('foo'), null);
 
     service.setItem('foo', 'baz');
-    assert.equal(service.getItem('foo'), 'baz');
+    assert.strictEqual(service.getItem('foo'), 'baz');
 
     service.clear();
-    assert.equal(service.getItem('foo'), null);
+    assert.strictEqual(service.getItem('foo'), null);
   });
 });

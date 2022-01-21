@@ -1,7 +1,7 @@
 import type { default as _DocumentService } from './services/browser/document';
 import type { default as _LocalStorageService } from './services/browser/local-storage';
-import type { default as _SessionStorageService } from './services/browser/session-storage';
 import type { default as _NavigatorService } from './services/browser/navigator';
+import type { default as _SessionStorageService } from './services/browser/session-storage';
 import type { default as _WindowService } from './services/browser/window';
 
 export type WindowService = typeof _WindowService;

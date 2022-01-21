@@ -1,6 +1,7 @@
 import { module, test } from 'qunit';
-import { setupBrowserFakes } from 'ember-browser-services/test-support';
 import { setupTest } from 'ember-qunit';
+
+import { setupBrowserFakes } from 'ember-browser-services/test-support';
 
 module('Unit | Service | browser/document', function (hooks) {
   setupTest(hooks);
@@ -9,7 +10,7 @@ module('Unit | Service | browser/document', function (hooks) {
     test('it is about equal the real thing', async function (assert) {
       let service = this.owner.lookup('service:browser/document');
 
-      assert.equal(service.body, document.body);
+      assert.strictEqual(service.body, document.body);
     });
   });
 
@@ -23,11 +24,11 @@ module('Unit | Service | browser/document', function (hooks) {
     test('title interacts separately from the real document', function (assert) {
       let service = this.owner.lookup('service:browser/document');
 
-      assert.equal(service.title, 'Foo');
+      assert.strictEqual(service.title, 'Foo');
       assert.notEqual(service.title, document.title, 'real document is unchanged');
 
       service.title = 'Bar';
-      assert.equal(service.title, 'Bar');
+      assert.strictEqual(service.title, 'Bar');
       assert.notEqual(service.title, document.title, 'real document remains unchanged');
     });
   });
@@ -51,8 +52,8 @@ module('Unit | Service | browser/document', function (hooks) {
         service.title = 'foo';
 
         assert.notEqual(document.title, originalTitle);
-        assert.equal(document.title, 'foo');
+        assert.strictEqual(document.title, 'foo');
       });
-    },
+    }
   );
 });

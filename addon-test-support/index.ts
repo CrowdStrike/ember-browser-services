@@ -1,13 +1,14 @@
-import window from 'ember-window-mock';
 import Service from '@ember/service';
+
 import { proxyService } from 'ember-browser-services/utils/proxy-service';
+import window from 'ember-window-mock';
 import { setupWindowMock } from 'ember-window-mock/test-support';
 
 import { FakeLocalStorageService, FakeSessionStorageService } from './-private/web-storage';
-
-import type { TestContext } from 'ember-test-helpers';
-import type { RecursivePartial } from 'ember-browser-services/types';
 import { patchWindow } from './window-mock-augments';
+
+import type { RecursivePartial } from 'ember-browser-services/types';
+import type { TestContext } from 'ember-test-helpers';
 
 type Fakes = {
   window?: boolean | typeof Service | RecursivePartial<Window>;
@@ -58,7 +59,7 @@ type UnknownObject = Record<string, any>;
 
 export function maybeMake<DefaultType extends UnknownObject, TestClass extends UnknownObject>(
   maybeImplementation: true | typeof Service | TestClass | RecursivePartial<DefaultType>,
-  target: DefaultType,
+  target: DefaultType
 ): DefaultType {
   if (maybeImplementation === true) {
     return proxyService(target);
