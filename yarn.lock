@@ -1571,7 +1571,7 @@
     node-gyp "^8.2.0"
     read-package-json-fast "^2.0.1"
 
-"@nullvoxpopuli/eslint-configs@^2.0.0":
+"@nullvoxpopuli/eslint-configs@^2.1.18":
   version "2.1.18"
   resolved "https://registry.yarnpkg.com/@nullvoxpopuli/eslint-configs/-/eslint-configs-2.1.18.tgz#1f5746e539b6fc8fa1e9d6cac07d2bec4d22c4f0"
   integrity sha512-1mz6hTBrJgRy+c8OZw3hM6g882Zsbde8/DGH54EZso2Q/PNYwNH2O428cQhB6FS8bUOzGQ+v1IeA4NnPjvEvxA==
