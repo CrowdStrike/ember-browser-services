@@ -5709,7 +5709,7 @@ ember-cli-get-component-path-option@^1.0.0:
   resolved "https://registry.yarnpkg.com/ember-cli-get-component-path-option/-/ember-cli-get-component-path-option-1.0.0.tgz#0d7b595559e2f9050abed804f1d8eff1b08bc771"
   integrity sha1-DXtZVVni+QUKvtgE8djv8bCLx3E=
 
-ember-cli-htmlbars@^5.3.1, ember-cli-htmlbars@^5.7.1:
+ember-cli-htmlbars@^5.7.1:
   version "5.7.2"
   resolved "https://registry.yarnpkg.com/ember-cli-htmlbars/-/ember-cli-htmlbars-5.7.2.tgz#e0cd2fb3c20d85fe4c3e228e6f0590ee1c645ba8"
   integrity sha512-Uj6R+3TtBV5RZoJY14oZn/sNPnc+UgmC8nb5rI4P3fR/gYoyTFIZSXiIM7zl++IpMoIrocxOrgt+mhonKphgGg==
@@ -6189,14 +6189,13 @@ ember-try@^2.0.0:
     rimraf "^3.0.2"
     walk-sync "^2.2.0"
 
-ember-window-mock@^0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/ember-window-mock/-/ember-window-mock-0.7.2.tgz#9f43c6c6d3047ac4b8c85aa67c2912a6a2c76ce6"
-  integrity sha512-+zRvJbiiUkc2O9TocRG5REbx5DxPmBWU/zTBCrpc4Fdu4JVQucrs9JfMfl+HLWldjJEU6x5UEDg+PIi8VREZHg==
+ember-window-mock@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/ember-window-mock/-/ember-window-mock-0.8.0.tgz#695bef0d991116951ebbc532ddf6aa0c9b3e4043"
+  integrity sha512-v7FKm9/9x90G9mqVVan6FxjBsof5L3ERMt/X+XnfFQgnkzUV0eUn/bEvQJS4/ho7O/cTWRwZPqP5nQMUM6SCHQ==
   dependencies:
-    broccoli-funnel "^3.0.3"
-    ember-cli-babel "^7.23.0"
-    ember-cli-htmlbars "^5.3.1"
+    ember-cli-babel "^7.26.11"
+    ember-cli-htmlbars "^6.0.1"
 
 emoji-regex@^8.0.0:
   version "8.0.0"
