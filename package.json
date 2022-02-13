@@ -65,8 +65,8 @@
     "ember-window-mock": "^0.8.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.1.0",
-    "@commitlint/config-conventional": "^16.0.0",
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.6.0",
     "@embroider/test-setup": "^1.2.0",
@@ -97,8 +97,8 @@
     "@types/htmlbars-inline-precompile": "^1.0.1",
     "@types/qunit": "^2.11.3",
     "@types/rsvp": "^4.0.4",
-    "@typescript-eslint/eslint-plugin": "5.10.2",
-    "@typescript-eslint/parser": "^5.10.2",
+    "@typescript-eslint/eslint-plugin": "5.11.0",
+    "@typescript-eslint/parser": "^5.11.0",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^2.4.0",
