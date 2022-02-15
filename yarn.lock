@@ -1586,10 +1586,10 @@
     node-gyp "^8.2.0"
     read-package-json-fast "^2.0.1"
 
-"@nullvoxpopuli/eslint-configs@^2.1.22":
-  version "2.1.22"
-  resolved "https://registry.yarnpkg.com/@nullvoxpopuli/eslint-configs/-/eslint-configs-2.1.22.tgz#92f71d62b49ac4177d9f655adddd4f8e28d09501"
-  integrity sha512-yCtNDHbh1qpeAd/sXBSGuzWn/O6RMeXYLe1B8tp6qMYcRPGtKajH1XL5uWRh7Ynt/umPGBYgThW4F842xYzY8w==
+"@nullvoxpopuli/eslint-configs@^2.1.23":
+  version "2.1.23"
+  resolved "https://registry.yarnpkg.com/@nullvoxpopuli/eslint-configs/-/eslint-configs-2.1.23.tgz#313d788981044922e7bb81770411e3b0b23f78f4"
+  integrity sha512-zelRX8cdlu6b5K1dBwQqURbaD3y5E4fX7wl2gQiDUZwIPYVWGixd86xLpfsDqdE2ZYn1k7SbvYrIa8/lNbHniw==
   dependencies:
     "@typescript-eslint/eslint-plugin" "5.12.0"
     "@typescript-eslint/parser" "5.12.0"
@@ -1597,7 +1597,7 @@
     eslint "7.32.0"
     eslint-config-prettier "8.3.0"
     eslint-plugin-decorator-position "4.0.1"
-    eslint-plugin-ember "10.5.8"
+    eslint-plugin-ember "10.5.9"
     eslint-plugin-import "^2.25.4"
     eslint-plugin-json "^3.1.0"
     eslint-plugin-node "11.1.0"
@@ -5208,6 +5208,14 @@ css-tree@^1.0.0-alpha.39:
     mdn-data "2.0.14"
     source-map "^0.6.1"
 
+css-tree@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/css-tree/-/css-tree-2.0.4.tgz#be44314f17e9ac85fe894a5888941782e1123c29"
+  integrity sha512-b4IS9ZUMtGBiNjzYbcj9JhYbyei99R3ai2CSxlu8GQDnoPA/P+NU85hAm0eKDc/Zp660rpK6tFJQ2OSdacMHVg==
+  dependencies:
+    mdn-data "2.0.23"
+    source-map-js "^1.0.1"
+
 cssesc@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
@@ -6439,7 +6447,21 @@ eslint-plugin-decorator-position@4.0.1, eslint-plugin-decorator-position@^4.0.1:
     ember-rfc176-data "^0.3.12"
     snake-case "^3.0.3"
 
-eslint-plugin-ember@10.5.8, eslint-plugin-ember@^10.5.8:
+eslint-plugin-ember@10.5.9:
+  version "10.5.9"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-ember/-/eslint-plugin-ember-10.5.9.tgz#4071ac135c7207c7d4942e9fa75b710214885469"
+  integrity sha512-kJsdAaKNcfRvZBZ+YZ67pxxUgl+aPLFAnoFJNwTo+BsaptiOCsHUEc4xUKXiInH2BJOC6mg0FQcZKn1a6gwKrA==
+  dependencies:
+    "@ember-data/rfc395-data" "^0.0.4"
+    css-tree "^2.0.4"
+    ember-rfc176-data "^0.3.15"
+    eslint-utils "^3.0.0"
+    estraverse "^5.2.0"
+    lodash.kebabcase "^4.1.1"
+    requireindex "^1.2.0"
+    snake-case "^3.0.3"
+
+eslint-plugin-ember@^10.5.8:
   version "10.5.8"
   resolved "https://registry.yarnpkg.com/eslint-plugin-ember/-/eslint-plugin-ember-10.5.8.tgz#87e004a5ebed88f94008364554daf57df2c9c718"
   integrity sha512-d21mJ+F+htgi6HhrjwbOfllJojF4ZWGruW13HkBoGS2SaHqKUyvIH/8j3EjSxlsGFiNfhTEUWkNaUSLJxgbtWg==
@@ -9618,6 +9640,11 @@ mdn-data@2.0.14:
   version "2.0.14"
   resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.14.tgz#7113fc4281917d63ce29b43446f701e68c25ba50"
   integrity sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow==
+
+mdn-data@2.0.23:
+  version "2.0.23"
+  resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.23.tgz#dfb6c41e50a0edb808cf340973ab29321b70808e"
+  integrity sha512-IonVb7pfla2U4zW8rc7XGrtgq11BvYeCxWN8HS+KFBnLDE7XDK9AAMVhRuG6fj9BBsjc69Fqsp6WEActEdNTDQ==
 
 mdurl@^1.0.1:
   version "1.0.1"
