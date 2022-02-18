@@ -1,3 +1,10 @@
+## [3.0.3](https://github.com/CrowdStrike/ember-browser-services/compare/v3.0.2...v3.0.3) (2022-02-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-window-mock to ^0.8.1 ([19d60dc](https://github.com/CrowdStrike/ember-browser-services/commit/19d60dc40c6bef507d93b1f1195888e3274cf1f3))
+
 ## [3.0.2](https://github.com/CrowdStrike/ember-browser-services/compare/v3.0.1...v3.0.2) (2022-02-04)
 
 
