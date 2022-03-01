@@ -136,7 +136,7 @@
     "remark-lint": "^9.1.1",
     "remark-preset-lint-recommended": "^6.1.2",
     "semantic-release": "^19.0.2",
-    "typescript": "^4.5.5",
+    "typescript": "^4.6.2",
     "webpack": "^5.69.1"
   },
   "remarkConfig": {
