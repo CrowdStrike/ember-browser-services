@@ -1,6 +1,6 @@
 import '@ember/service';
 
-import { proxyService } from 'ember-browser-services/utils/proxy-service';
+import { proxyService } from './-proxy-service';
 
 const DocumentProxyService = proxyService(document);
 

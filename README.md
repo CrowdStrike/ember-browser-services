@@ -15,6 +15,8 @@ looking at the documentation.
 
 ## Installation
 
+    pnpm add ember-browser-services
+    # or
     yarn add ember-browser-services
     # or
     npm install ember-browser-services

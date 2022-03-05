@@ -1,13 +1,13 @@
 import Service from '@ember/service';
 
-import { proxyService } from 'ember-browser-services/utils/proxy-service';
 import window from 'ember-window-mock';
 import { setupWindowMock } from 'ember-window-mock/test-support';
 
+import { proxyService } from '../services/browser/-proxy-service';
 import { FakeLocalStorageService, FakeSessionStorageService } from './-private/web-storage';
 import { patchWindow } from './window-mock-augments';
 
-import type { RecursivePartial } from 'ember-browser-services/types';
+import type { RecursivePartial } from '../types';
 import type { TestContext } from 'ember-test-helpers';
 
 type Fakes = {

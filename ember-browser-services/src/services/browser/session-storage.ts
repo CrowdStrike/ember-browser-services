@@ -1,6 +1,6 @@
 import '@ember/service';
 
-import { proxyService } from 'ember-browser-services/utils/proxy-service';
+import { proxyService } from './-proxy-service';
 
 /**
  * In order to have thorough testing, we should only interact with the session storage
