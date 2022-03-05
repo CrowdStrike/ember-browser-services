@@ -44,6 +44,8 @@
     "@nullvoxpopuli/eslint-configs": "2.2.2",
     "@types/ember__test-helpers": "^2.6.1",
     "@types/ember-test-helpers": "^1.0.11",
+    "@semantic-release/changelog": "^5.0.0",
+    "@semantic-release/git": "^9.0.0",
     "babel-eslint": "10.1.0",
     "concurrently": "7.0.0",
     "eslint": "^7.0.0",
@@ -57,6 +59,7 @@
     "eslint-plugin-simple-import-sort": "7.0.0",
     "rollup": "2.69.1",
     "rollup-plugin-ts": "2.0.5",
+    "semantic-release": "^17.0.0",
     "typescript": "4.6.2"
   },
   "publishConfig": {
