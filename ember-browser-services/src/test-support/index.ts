@@ -8,7 +8,7 @@ import { FakeLocalStorageService, FakeSessionStorageService } from './-private/w
 import { patchWindow } from './window-mock-augments';
 
 import type { RecursivePartial } from '../types';
-import type { TestContext } from 'ember-test-helpers';
+import type { TestContext } from '@ember/test-helpers';
 
 type Fakes = {
   window?: boolean | typeof Service | RecursivePartial<Window>;
@@ -22,33 +22,39 @@ export function setupBrowserFakes(hooks: NestedHooks, options: Fakes): void {
   setupWindowMock(hooks);
 
   hooks.beforeEach(function (this: TestContext) {
+    // the type for the owner keeps being wrong............
+    let owner = this.owner as unknown as {
+      register: (name: string, thing: unknown) => void;
+      unregister: (name: string) => void;
+    };
+
     if (options.window) {
       // default, can still be overwritten
       // see: https://github.com/kaliber5/ember-window-mock/issues/175
       let patched = patchWindow(window);
       let service = maybeMake(options.window, patched);
 
-      this.owner.register('service:browser/window', service);
+      owner.register('service:browser/window', service);
     }
 
     if (options.document) {
       let service = maybeMake(options.document, window.document);
 
-      this.owner.register('service:browser/document', service);
+      owner.register('service:browser/document', service);
     }
 
     if (options.localStorage) {
-      this.owner.register('service:browser/local-storage', FakeLocalStorageService);
+      owner.register('service:browser/local-storage', FakeLocalStorageService);
     }
 
     if (options.sessionStorage) {
-      this.owner.register('service:browser/session-storage', FakeSessionStorageService);
+      owner.register('service:browser/session-storage', FakeSessionStorageService);
     }
 
     if (options.navigator) {
       let service = maybeMake(options.navigator, window.navigator);
 
-      this.owner.register('service:browser/navigator', service);
+      owner.register('service:browser/navigator', service);
     }
   });
 }

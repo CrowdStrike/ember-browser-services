@@ -1,0 +1,50 @@
+provider: github
+template: "v2-addon"
+
+# ---------------------
+
+addon: './ember-browser-services'
+testApp: './test-app'
+
+lint:
+  commits: true
+  eslint:
+    - "./ember-browser-services"
+    - "./test-app"
+
+build:
+  run: 'pnpm build:js'
+  expect: |
+    services/browser/document.d.ts
+    services/browser/document.js
+    services/browser/document.js.map
+    services/browser/local-storage.d.ts
+    services/browser/local-storage.js
+    services/browser/local-storage.js.map
+    services/browser/navigator.d.ts
+    services/browser/navigator.js
+    services/browser/navigator.js.map
+
+support:
+  ember-try: true
+  typescript:
+   - typescript@4.5
+   - typescript@4.6
+   - typescript@4.7
+
+
+release:
+  semantic: true
+
+extra:
+  - name: Measure Asset Sizes
+    needs: ['build']
+    steps:
+      # ember-ci-update inserts preamble here
+      - name: 'measure asset sizes'
+        run: node ./build/estimate-bytes/index.js
+      - name: comment on PR
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          path: ./build/estimate-bytes/comment.txt
+
