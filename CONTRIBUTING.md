@@ -4,13 +4,13 @@
 
 *   `git clone <repository-url>`
 *   `cd ember-browser-services`
-*   `yarn install`
+*   `pnpm install`
 
 ## Linting
 
-*   `yarn lint:hbs`
-*   `yarn lint:js`
-*   `yarn lint:js --fix`
+*   `pnpm run lint:hbs`
+*   `pnpm run lint:js`
+*   `pnpm run lint:js --fix`
 
 ## Running tests
 
