@@ -1,164 +1,33 @@
 {
-  "name": "ember-browser-services",
-  "version": "3.0.5",
-  "description": "Browser APIs as services for easier testing",
-  "keywords": [
-    "ember-addon",
-    "browser",
-    "ember",
-    "ember.js",
-    "services",
-    "window",
-    "testing"
-  ],
+  "private": true,
   "repository": "https://github.com/CrowdStrike/ember-browser-services",
   "license": "MIT",
   "author": "CrowdStrike UX Team",
-  "files": [
-    "addon",
-    "addon-test-support",
-    "app",
-    "config",
-    "declarations",
-    "index.js"
-  ],
   "scripts": {
-    "build": "ember build --environment=production",
-    "lint:docs": "remark .",
-    "lint:docs-js": "eslint . --cache --ext md",
-    "lint": "npm-run-all --aggregate-output --continue-on-error --parallel 'lint:!(fix)'",
-    "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
-    "lint:hbs": "ember-template-lint .",
-    "lint:hbs:fix": "ember-template-lint . --fix",
-    "lint:js": "eslint . --cache",
-    "lint:js:fix": "eslint . --fix",
-    "start": "ember serve",
-    "test": "ember test",
-    "prepack": "tsc --build",
-    "postpublish": "tsc --build --clean",
-    "postpack": "ember ts:clean"
+    "build": "pnpm --filter ember-browser-services build",
+    "ci:update": "npx ember-ci-update"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
-  },
-  "release": {
-    "branches": [
-      "main"
-    ],
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/github",
-      "@semantic-release/git"
-    ]
-  },
-  "typesVersions": {
-    "*": {
-      "*": [
-        "declarations/*",
-        "declarations/*/index"
-      ]
-    }
-  },
-  "dependencies": {
-    "ember-cli-babel": "^7.26.11",
-    "ember-cli-htmlbars": "^6.0.1",
-    "ember-cli-typescript": "^5.1.0",
-    "ember-window-mock": "^0.8.1"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^16.3.0",
-    "@commitlint/config-conventional": "^16.2.4",
-    "@ember/optional-features": "^2.0.0",
-    "@ember/test-helpers": "^2.8.1",
-    "@embroider/test-setup": "^1.7.1",
-    "@glimmer/component": "^1.1.2",
-    "@glimmer/tracking": "^1.1.2",
-    "@nullvoxpopuli/eslint-configs": "^2.2.22",
-    "@semantic-release/changelog": "^6.0.1",
-    "@semantic-release/git": "^10.0.1",
-    "@types/ember-qunit": "^3.4.15",
-    "@types/ember-resolver": "^5.0.10",
-    "@types/ember__application": "^3.16.3",
-    "@types/ember__array": "^3.16.4",
-    "@types/ember__component": "^3.16.6",
-    "@types/ember__controller": "^3.16.6",
-    "@types/ember__debug": "^3.16.5",
-    "@types/ember__engine": "^3.16.3",
-    "@types/ember__error": "^3.16.1",
-    "@types/ember__object": "^3.12.6",
-    "@types/ember__polyfills": "^3.12.1",
-    "@types/ember__routing": "^3.16.15",
-    "@types/ember__runloop": "^3.16.3",
-    "@types/ember__service": "^3.16.1",
-    "@types/ember__string": "^3.16.3",
-    "@types/ember__template": "^3.16.1",
-    "@types/ember__test": "^3.16.1",
-    "@types/ember__test-helpers": "^2.6.0",
-    "@types/ember__utils": "^3.16.2",
-    "@types/htmlbars-inline-precompile": "^1.0.1",
-    "@types/qunit": "^2.11.3",
-    "@types/rsvp": "^4.0.4",
-    "@typescript-eslint/eslint-plugin": "5.27.0",
-    "@typescript-eslint/parser": "^5.27.0",
-    "babel-eslint": "^10.1.0",
-    "broccoli-asset-rev": "^3.0.0",
-    "ember-auto-import": "^2.4.2",
-    "ember-cli": "~4.4.0",
-    "ember-cli-dependency-checker": "^3.3.1",
-    "ember-cli-inject-live-reload": "^2.1.0",
-    "ember-cli-sri": "^2.1.1",
-    "ember-cli-terser": "^4.0.2",
-    "ember-disable-prototype-extensions": "^1.1.3",
-    "ember-export-application-global": "^2.0.1",
-    "ember-load-initializers": "^2.1.2",
-    "ember-maybe-import-regenerator": "^1.0.0",
-    "ember-page-title": "^7.0.0",
-    "ember-qunit": "^5.1.5",
-    "ember-resolver": "^8.0.3",
-    "ember-source": "~4.4.1",
-    "ember-source-channel-url": "^3.0.0",
-    "ember-template-lint": "^4.10.0",
-    "ember-try": "^2.0.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-decorator-position": "^4.0.1",
-    "eslint-plugin-ember": "^10.6.1",
-    "eslint-plugin-markdown": "^2.2.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "4.0.0",
-    "eslint-plugin-qunit": "^7.2.0",
-    "loader.js": "^4.7.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "2.6.2",
-    "qunit": "^2.19.1",
-    "qunit-console-grouper": "^0.3.0",
-    "qunit-dom": "^2.0.0",
-    "remark-cli": "^10.0.1",
-    "remark-lint": "^9.1.1",
-    "remark-preset-lint-recommended": "^6.1.2",
-    "semantic-release": "^19.0.2",
-    "typescript": "^4.7.3",
-    "webpack": "^5.73.0"
-  },
-  "remarkConfig": {
-    "plugins": [
-      "remark-preset-lint-recommended"
-    ]
+  "volta": {
+    "node": "16.14.0"
   },
   "engines": {
     "node": "12.* || >= 14"
   },
-  "ember": {
-    "edition": "octane"
+  "devDependencies": {
+    "prettier": "^2.2.1"
   },
-  "ember-addon": {
-    "configPath": "tests/dummy/config"
-  },
-  "volta": {
-    "node": "16.15.1",
-    "yarn": "1.22.18"
+  "packageManager": "pnpm@7.1.7",
+  "pnpm": {
+    "overrides": {
+      "@types/eslint": "7.29.0",
+      "mustache": "^4.2.0"
+    },
+    "overrides-notes": {
+      "@types/eslint": "webpack brings in @types/eslint@8, which breaks our type checking",
+      "mustache": "ember-cli -> testem -> consolidate -> mustache is ancient"
+    },
+    "peerDependencyRules": {
+      "ignoreMissing": ["@glimmer/component"]
+    }
   }
 }
