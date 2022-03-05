@@ -1,6 +1,6 @@
 import Service from '@ember/service';
 
-import type { Class } from '../types';
+import type { Class } from '../../types';
 
 /**
  * Allows Services to behave as Proxy objects for real objects, such as

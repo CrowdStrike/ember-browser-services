@@ -10,7 +10,7 @@ const addon = new Addon({
 });
 
 export default defineConfig({
-  output: addon.output(),
+  output: { ...addon.output(), sourcemap: true },
   plugins: [
     // These are the modules that users should be able to import from your
     // addon. Anything not listed here may get optimized away.
@@ -21,6 +21,7 @@ export default defineConfig({
     // not everything in publicEntrypoints necessarily needs to go here.
     addon.appReexports([
       'components/**/*.{js,ts}', 'helpers/**/*.{js,ts}', 'modifiers/**/*.{js,ts}',
+      'services/**/*.{js,ts}',
       'initializers/**/*.{js,ts}', 'instance-initializers/**/*.{js,ts}'
     ]),
     // This babel config should *not* apply presets or compile away ES modules.
@@ -35,7 +36,12 @@ export default defineConfig({
       browserslist: ['last 2 firefox versions', 'last 2 chrome versions'],
       tsconfig: {
         fileName: 'tsconfig.json',
-        hook: (config) => ({ ...config, declaration: true }),
+        hook: (config) => ({
+          ...config,
+          declaration: true,
+          declarationDir: 'dist',
+          declarationMap: true,
+        }),
       },
     }),
 

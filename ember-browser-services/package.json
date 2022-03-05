@@ -69,7 +69,14 @@
     "version": 2,
     "type": "addon",
     "main": "./addon-main.cjs",
-    "app-js": {}
+    "app-js": {
+      "./services/browser/-proxy-service.js": "./dist/_app_/services/browser/-proxy-service.js",
+      "./services/browser/document.js": "./dist/_app_/services/browser/document.js",
+      "./services/browser/local-storage.js": "./dist/_app_/services/browser/local-storage.js",
+      "./services/browser/navigator.js": "./dist/_app_/services/browser/navigator.js",
+      "./services/browser/session-storage.js": "./dist/_app_/services/browser/session-storage.js",
+      "./services/browser/window.js": "./dist/_app_/services/browser/window.js"
+    }
   },
   "engines": {
     "node": "12.* || >= 14"
