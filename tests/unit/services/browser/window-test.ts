@@ -13,6 +13,16 @@ module('Service | browser/window', function (hooks) {
       assert.strictEqual(service.location, window.location);
       assert.strictEqual(service.top.location, window.top?.location);
       assert.strictEqual(service.parent.location, window.parent.location);
+
+      // we do some bind magic when we're dealing with functions,
+      // so this setup allows us to keep the same function for comparison
+      let bindBackup = window.fetch.bind;
+      window.fetch.bind = () => window.fetch;
+
+      assert.strictEqual(service.fetch, window.fetch);
+
+      // restore original `bind`
+      window.fetch.bind = bindBackup;
     });
   });
 
@@ -29,6 +39,23 @@ module('Service | browser/window', function (hooks) {
   });
 
   module('Examples', function () {
+    module('Stubbing fetch', function (hooks) {
+      setupBrowserFakes(hooks, {
+        window: {
+          fetch: async (url: string) => ({ url }),
+        },
+      });
+
+      test('can intercept fetch', async function (assert) {
+        let service = this.owner.lookup('service:browser/window');
+        let fakeUrl = 'https://example.com';
+        let { url: urlUsed } = await service.fetch(fakeUrl);
+
+        assert.equal(urlUsed, fakeUrl);
+      });
+    });
+
+
     module('Stubbing location.href', function (hooks) {
       setupBrowserFakes(hooks, {
         window: {
