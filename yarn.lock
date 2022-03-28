@@ -1586,10 +1586,10 @@
     node-gyp "^8.2.0"
     read-package-json-fast "^2.0.1"
 
-"@nullvoxpopuli/eslint-configs@^2.2.6":
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/@nullvoxpopuli/eslint-configs/-/eslint-configs-2.2.6.tgz#415c1a1fcf75a7d964fbad058baf6cfd76da8415"
-  integrity sha512-6f5Foz2NIL6fnCGpXEnEZywnBnf8J/8n34j8GvVVtn8GHYFD3X6X3qjjBfvomEkUUDr0GrqMMwJpLlBlevy0qQ==
+"@nullvoxpopuli/eslint-configs@^2.2.7":
+  version "2.2.7"
+  resolved "https://registry.yarnpkg.com/@nullvoxpopuli/eslint-configs/-/eslint-configs-2.2.7.tgz#0301be81a8a0fe0d645f6622cda42979d33c10e2"
+  integrity sha512-C4/fAD16wIMfqldC8UiELEFYNCE903Hxiq78j8++fSdSg/qEeTroAiFSGbg8YVp4M69AiKGYtBpUnlJ0XQCwoA==
   dependencies:
     "@typescript-eslint/eslint-plugin" "5.16.0"
     "@typescript-eslint/parser" "5.16.0"
@@ -1604,7 +1604,7 @@
     eslint-plugin-prettier "4.0.0"
     eslint-plugin-qunit "7.2.0"
     eslint-plugin-simple-import-sort "^7.0.0"
-    prettier "2.6.0"
+    prettier "2.6.1"
 
 "@octokit/auth-token@^2.4.4":
   version "2.5.0"
@@ -11323,11 +11323,6 @@ prettier-linter-helpers@^1.0.0:
   integrity sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
   dependencies:
     fast-diff "^1.1.2"
-
-prettier@2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.6.0.tgz#12f8f504c4d8ddb76475f441337542fa799207d4"
-  integrity sha512-m2FgJibYrBGGgQXNzfd0PuDGShJgRavjUoRCw1mZERIWVSXF0iLzLm+aOqTAbLnC3n6JzUhAA8uZnFVghHJ86A==
 
 prettier@2.6.1:
   version "2.6.1"
