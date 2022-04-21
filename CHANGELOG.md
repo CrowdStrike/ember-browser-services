@@ -1,3 +1,10 @@
+## [3.0.4](https://github.com/CrowdStrike/ember-browser-services/compare/v3.0.3...v3.0.4) (2022-04-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-typescript to ^5.1.0 ([d2dd804](https://github.com/CrowdStrike/ember-browser-services/commit/d2dd8047b1850568a942fa6799838316974ab762))
+
 ## [3.0.3](https://github.com/CrowdStrike/ember-browser-services/compare/v3.0.2...v3.0.3) (2022-02-18)
 
 

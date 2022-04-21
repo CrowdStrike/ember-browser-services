@@ -1,6 +1,6 @@
 {
   "name": "ember-browser-services",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "Browser APIs as services for easier testing",
   "keywords": [
     "ember-addon",
