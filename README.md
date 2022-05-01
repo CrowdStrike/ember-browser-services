@@ -125,13 +125,25 @@ import { setupBrowserFakes } from 'ember-browser-services/test-support';
 
 module('Scenario Name', function (hooks) {
   setupBrowserFakes(hooks, {
-    window: { location: { href: 'https://crowdstrike.com' } },
+    window: {
+      location: { href: 'https://crowdstrike.com' },
+      fetch: async (url) => ({ url })
+    },
   });
 
   test('is at crowdstrike.com', function (assert) {
     let service = this.owner.lookup('service:browser/window');
 
     assert.equal(service.location.href, 'https://crowdstrike.com'); // => succeeds
+  });
+
+  test('fetches from crowdstrike.com', async function (assert) {
+    let service = this.owner.lookup('service:browser/window');
+    let urlPath = 'crowdstrike.com';
+
+    let { url: urlUsed } = await service.fetch(urlPath);
+
+    assert.equal(urlUsed, urlPath);
   });
 });
 ```
