@@ -14,10 +14,14 @@
   "repository": "https://github.com/CrowdStrike/ember-browser-services",
   "license": "MIT",
   "author": "CrowdStrike UX Team",
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
-  },
+  "files": [
+    "addon",
+    "addon-test-support",
+    "app",
+    "config",
+    "declarations",
+    "index.js"
+  ],
   "scripts": {
     "build": "ember build --environment=production",
     "lint:docs": "remark .",
