@@ -1,3 +1,10 @@
+## [3.0.5](https://github.com/CrowdStrike/ember-browser-services/compare/v3.0.4...v3.0.5) (2022-05-16)
+
+
+### Bug Fixes
+
+* **package:** opt in to which files to include on npm, instead of the inverse ([f0d2dd9](https://github.com/CrowdStrike/ember-browser-services/commit/f0d2dd917e1453fdd3b146b5741d70aa033431fb))
+
 ## [3.0.4](https://github.com/CrowdStrike/ember-browser-services/compare/v3.0.3...v3.0.4) (2022-04-21)
 
 
