@@ -69,7 +69,7 @@
     "ember-window-mock": "^0.8.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.2.4",
+    "@commitlint/cli": "^16.3.0",
     "@commitlint/config-conventional": "^16.2.4",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.8.1",
@@ -101,8 +101,8 @@
     "@types/htmlbars-inline-precompile": "^1.0.1",
     "@types/qunit": "^2.11.3",
     "@types/rsvp": "^4.0.4",
-    "@typescript-eslint/eslint-plugin": "5.22.0",
-    "@typescript-eslint/parser": "^5.22.0",
+    "@typescript-eslint/eslint-plugin": "5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^2.4.2",
@@ -120,7 +120,7 @@
     "ember-resolver": "^8.0.3",
     "ember-source": "~4.4.0",
     "ember-source-channel-url": "^3.0.0",
-    "ember-template-lint": "^4.6.0",
+    "ember-template-lint": "^4.9.1",
     "ember-try": "^2.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "8.5.0",
