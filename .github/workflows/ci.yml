@@ -93,6 +93,10 @@ jobs:
             run: pnpm build:js
             cwd: ./ember-browser-services
           expect: |
+            index.js
+            index.js.map
+            index.d.ts
+            index.d.ts.map
             services/browser/document.d.ts
             services/browser/document.js
             services/browser/document.js.map
@@ -102,6 +106,9 @@ jobs:
             services/browser/navigator.d.ts
             services/browser/navigator.js
             services/browser/navigator.js.map
+            test-support/index.js
+            test-support/index.js.map
+            test-support/index.d.ts
           ' >> assert-contents.config.yml
                         npx assert-folder-contents
       - uses: actions/upload-artifact@v3
