@@ -114,13 +114,15 @@
       "enabled": false
     },
     {
-      // changing engines forces other people to need to upgrade their minimum node
-      // therefor engine changes are breaking changes
-      "depTypeList": ["engines"],
+      // ensure maximum compatibility, when possible
+      "matchPaths": ["ember-browser-services/package.json"],
+      "matchDepTypes": ["dependencies"],
       "enabled": false
     },
     {
-      "matchPaths": ["testing/**"],
+      // changing engines forces other people to need to upgrade their minimum node
+      // therefor engine changes are breaking changes
+      "depTypeList": ["engines"],
       "enabled": false
     }
   ]
