@@ -10,7 +10,7 @@ function getLocalStorageService(owner: ApplicationInstance) {
   // the type of owner keeps being incorrect...
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  return owner.lookup('service:browser/navigator') as LocalStorageService;
+  return owner.lookup('service:browser/local-storage') as LocalStorageService;
 }
 
 module('Service | browser/local-storage', function (hooks) {

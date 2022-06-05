@@ -176,6 +176,8 @@ jobs:
           - ember-lts-3.20
           - ember-lts-3.24
           - ember-lts-3.28
+          - ember-4.0
+          - ember-4.4
           - ember-release
           - ember-beta
           - ember-canary
@@ -282,34 +284,3 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  MeasureAssetSizes:
-    name: Measure Asset Sizes
-    needs:
-      - build
-    steps:
-      - uses: actions/checkout@v3
-      - uses: volta-cli/action@v1
-      - name: Cache pnpm modules
-        uses: actions/cache@v3
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: ${{ runner.os }}-
-      - uses: pnpm/action-setup@v2.2.2
-        with:
-          version: 7.1.2
-      - name: Install Dependencies
-        run: pnpm install
-      - name: Download built package from cache
-        uses: actions/download-artifact@v3
-        with:
-          name: dist
-          path: ${{ env.dist }}
-      - name: measure asset sizes
-        run: node ./build/estimate-bytes/index.js
-      - name: comment on PR
-        uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          path: ./build/estimate-bytes/comment.txt
-    timeout-minutes: 5
-    runs-on: ubuntu-latest

@@ -36,15 +36,3 @@ support:
 release:
   semantic: true
 
-extra:
-  - name: Measure Asset Sizes
-    needs: ['build']
-    steps:
-      # ember-ci-update inserts preamble here
-      - name: 'measure asset sizes'
-        run: node ./build/estimate-bytes/index.js
-      - name: comment on PR
-        uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          path: ./build/estimate-bytes/comment.txt
-
