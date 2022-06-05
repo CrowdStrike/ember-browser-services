@@ -8,6 +8,9 @@ import type ApplicationInstance from '@ember/application/instance';
 import type { NavigatorService } from 'ember-browser-services/types';
 
 function getNavigatorService(owner: ApplicationInstance) {
+  // the type of owner keeps being incorrect...
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   return owner.lookup('service:browser/navigator') as NavigatorService;
 }
 

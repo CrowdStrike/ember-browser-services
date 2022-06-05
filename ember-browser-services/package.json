@@ -12,6 +12,13 @@
     ".": "./dist/index.js",
     "./*": "./dist/*"
   },
+  "typesVersions": {
+    ">=4.0.0": {
+      "*": [
+        "dist/*"
+      ]
+    }
+  },
   "files": [
     "dist",
     "addon-main.cjs",

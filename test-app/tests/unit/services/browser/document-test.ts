@@ -3,12 +3,22 @@ import { setupTest } from 'ember-qunit';
 
 import { setupBrowserFakes } from 'ember-browser-services/test-support';
 
+import type ApplicationInstance from '@ember/application/instance';
+import type { DocumentService } from 'ember-browser-services/types';
+
+function getDocumentService(owner: ApplicationInstance): DocumentService {
+  // the type of owner keeps being incorrect...
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  return owner.lookup('service:browser/document') as DocumentService;
+}
+
 module('Unit | Service | browser/document', function (hooks) {
   setupTest(hooks);
 
   module('accessing the service when not under test', function () {
     test('it is about equal the real thing', async function (assert) {
-      let service = this.owner.lookup('service:browser/document');
+      let service = getDocumentService(this.owner);
 
       assert.strictEqual(service.body, document.body);
     });
@@ -22,7 +32,7 @@ module('Unit | Service | browser/document', function (hooks) {
     });
 
     test('title interacts separately from the real document', function (assert) {
-      let service = this.owner.lookup('service:browser/document');
+      let service = getDocumentService(this.owner);
 
       assert.strictEqual(service.title, 'Foo');
       assert.notEqual(service.title, document.title, 'real document is unchanged');
@@ -47,7 +57,7 @@ module('Unit | Service | browser/document', function (hooks) {
       });
 
       test('Proxied Service updates the real document', function (assert) {
-        let service = this.owner.lookup('service:browser/document');
+        let service = getDocumentService(this.owner);
 
         service.title = 'foo';
 

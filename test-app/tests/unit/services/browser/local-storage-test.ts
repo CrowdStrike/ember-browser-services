@@ -3,6 +3,16 @@ import { setupTest } from 'ember-qunit';
 
 import { setupBrowserFakes } from 'ember-browser-services/test-support';
 
+import type ApplicationInstance from '@ember/application/instance';
+import type { LocalStorageService } from 'ember-browser-services/types';
+
+function getLocalStorageService(owner: ApplicationInstance) {
+  // the type of owner keeps being incorrect...
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  return owner.lookup('service:browser/navigator') as LocalStorageService;
+}
+
 module('Service | browser/local-storage', function (hooks) {
   setupTest(hooks);
   setupBrowserFakes(hooks, { localStorage: true });
@@ -10,10 +20,12 @@ module('Service | browser/local-storage', function (hooks) {
   test('it works', function (assert) {
     assert.expect(14);
 
-    let service = this.owner.lookup('service:browser/local-storage');
+    let service = getLocalStorageService(this.owner);
 
     function assertGetSet(valueIn: unknown, expectedOut?: string | null) {
-      service.setItem('foo', valueIn);
+      // A lie to TS because localStorage will convert this to
+      // a string regardless of it makes sense
+      service.setItem('foo', valueIn as unknown as string);
 
       assert.strictEqual(service.getItem('foo'), expectedOut);
     }

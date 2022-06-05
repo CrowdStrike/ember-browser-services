@@ -3,15 +3,25 @@ import { setupTest } from 'ember-qunit';
 
 import { setupBrowserFakes } from 'ember-browser-services/test-support';
 
+import type ApplicationInstance from '@ember/application/instance';
+import type { WindowService } from 'ember-browser-services/types';
+
+function getWindowService(owner: ApplicationInstance): WindowService {
+  // the type of owner keeps being incorrect...
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  return owner.lookup('service:browser/window') as WindowService;
+}
+
 module('Service | browser/window', function (hooks) {
   setupTest(hooks);
 
   module('accessing the service when not under test', function () {
     test('it is about equal the real thing', async function (assert) {
-      let service = this.owner.lookup('service:browser/window');
+      let service = getWindowService(this.owner);
 
       assert.strictEqual(service.location, window.location);
-      assert.strictEqual(service.top.location, window.top?.location);
+      assert.strictEqual(service.top?.location, window.top?.location);
       assert.strictEqual(service.parent.location, window.parent.location);
     });
   });
@@ -20,9 +30,11 @@ module('Service | browser/window', function (hooks) {
     setupBrowserFakes(hooks, { window: true });
 
     test('href cannot be boolean', function (assert) {
-      let service = this.owner.lookup('service:browser/window');
+      let service = getWindowService(this.owner);
 
       assert.throws(() => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         service.location.href = true;
       }, /TypeError/);
     });
@@ -40,7 +52,7 @@ module('Service | browser/window', function (hooks) {
       // if this test were to fail, the test suite would hang and timeout, because
       // we can't run tests and change the href at the same time
       test('can reset the href without causing a browser refresh', function (assert) {
-        let service = this.owner.lookup('service:browser/window');
+        let service = getWindowService(this.owner);
 
         // verify that the initial config works
         assert.strictEqual(service.location.href, 'http://init.ial/', 'window.location.href');
@@ -75,7 +87,7 @@ module('Service | browser/window', function (hooks) {
       });
 
       test('can read from the stubbed origin', function (assert) {
-        let service = this.owner.lookup('service:browser/window');
+        let service = getWindowService(this.owner);
 
         assert.strictEqual(service.location.href, 'http://init.ial/', 'window.location.href');
         assert.strictEqual(service.location.origin, 'http://init.ial', 'window.location.origin');
@@ -92,7 +104,7 @@ module('Service | browser/window', function (hooks) {
       });
 
       test('it works', function (assert) {
-        let service = this.owner.lookup('service:browser/window');
+        let service = getWindowService(this.owner);
         let loginPath = 'https://example.com/login';
 
         service.parent.location.href = loginPath;
@@ -100,7 +112,7 @@ module('Service | browser/window', function (hooks) {
         assert.strictEqual(service.location.href, loginPath);
         assert.strictEqual(service.location.href, service.parent.location.href);
         assert.strictEqual(service.location, service.parent.location);
-        assert.strictEqual(service.location, service.top.location);
+        assert.strictEqual(service.location, service.top?.location);
       });
     });
 
@@ -110,7 +122,7 @@ module('Service | browser/window', function (hooks) {
       });
 
       test('it works', function (assert) {
-        let service = this.owner.lookup('service:browser/window');
+        let service = getWindowService(this.owner);
 
         assert.ok(service.location.origin);
         service.parent.location.href = '/login';
