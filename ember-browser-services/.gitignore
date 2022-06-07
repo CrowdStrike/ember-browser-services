@@ -3,3 +3,6 @@ README.md
 
 # output
 dist/
+
+# debug
+.pnpm-debug.log
