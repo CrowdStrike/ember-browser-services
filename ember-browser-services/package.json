@@ -10,7 +10,8 @@
   ],
   "exports": {
     ".": "./dist/index.js",
-    "./*": "./dist/*"
+    "./*": "./dist/*",
+    "./addon-main.js": "./addon-main.cjs"
   },
   "typesVersions": {
     ">=4.0.0": {
