@@ -10,10 +10,14 @@
   ],
   "exports": {
     ".": "./dist/index.js",
+    "./test-support": "./dist/test-support/index.js",
+    "./addon-main.js": "./addon-main.cjs",
     "./*": "./dist/*"
   },
   "typesVersions": {
     ">=4.0.0": {
+      "test-support": ["dist/test-support/index.d.ts"],
+      "types": ["dist/types.d.ts"],
       "*": [
         "dist/*"
       ]
