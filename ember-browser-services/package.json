@@ -1,6 +1,6 @@
 {
   "name": "ember-browser-services",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Browser APIs as services for easier testing",
   "repository": "https://github.com/CrowdStrike/ember-browser-services",
   "license": "MIT",
@@ -16,8 +16,12 @@
   },
   "typesVersions": {
     ">=4.0.0": {
-      "test-support": ["dist/test-support/index.d.ts"],
-      "types": ["dist/types.d.ts"],
+      "test-support": [
+        "dist/test-support/index.d.ts"
+      ],
+      "types": [
+        "dist/types.d.ts"
+      ],
       "*": [
         "dist/*"
       ]
