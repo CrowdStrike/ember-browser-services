@@ -1,0 +1,3 @@
+packages:
+  - "ember-browser-services"
+  - "test-app"

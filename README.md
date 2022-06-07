@@ -15,6 +15,8 @@ looking at the documentation.
 
 ## Installation
 
+    pnpm add ember-browser-services
+    # or
     yarn add ember-browser-services
     # or
     npm install ember-browser-services
@@ -23,8 +25,10 @@ looking at the documentation.
 
 ## Compatibility
 
-*   Ember.js v3.12 or above
-*   Node.js v10 or above
+* Ember.js v3.12 or above
+* ember-auto-import v2 or above
+* typescript v4.5 or above
+* embroider max-compat and strict modes
 
 ## Usage
 

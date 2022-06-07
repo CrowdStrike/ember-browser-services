@@ -1,6 +1,0 @@
-{
-  "extends": "./config/build/tsconfig.compiler-options.ember.json",
-  "compilerOptions": {
-    "composite": true
-  }
-}
