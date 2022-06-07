@@ -1,6 +1,6 @@
 {
   "name": "ember-browser-services",
-  "version": "3.0.3",
+  "version": "4.0.0",
   "description": "Browser APIs as services for easier testing",
   "repository": "https://github.com/CrowdStrike/ember-browser-services",
   "license": "MIT",
