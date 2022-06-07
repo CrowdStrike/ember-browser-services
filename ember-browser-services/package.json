@@ -16,6 +16,8 @@
   },
   "typesVersions": {
     ">=4.0.0": {
+      "test-support": ["dist/test-support/index.d.ts"],
+      "types": ["dist/types.d.ts"],
       "*": [
         "dist/*"
       ]
