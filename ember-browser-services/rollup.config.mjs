@@ -20,12 +20,8 @@ export default defineConfig({
     // "app" tree. Things in here should also be in publicEntrypoints above, but
     // not everything in publicEntrypoints necessarily needs to go here.
     addon.appReexports([
-      'components/**/*.{js,ts}',
-      'helpers/**/*.{js,ts}',
-      'modifiers/**/*.{js,ts}',
-      'services/**/*.{js,ts}',
-      'initializers/**/*.{js,ts}',
-      'instance-initializers/**/*.{js,ts}',
+      // omit files starting with anything other than a letter
+      'services/**/[a-z]*.{js,ts}',
     ]),
     // This babel config should *not* apply presets or compile away ES modules.
     // It exists only to provide development niceties for you, like automatic
