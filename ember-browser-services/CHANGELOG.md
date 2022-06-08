@@ -1,3 +1,10 @@
+## [4.0.3](https://github.com/CrowdStrike/ember-browser-services/compare/v4.0.2...v4.0.3) (2022-06-08)
+
+
+### Bug Fixes
+
+* **deps:** widen range for @embroider/addon-shim ([4db62b7](https://github.com/CrowdStrike/ember-browser-services/commit/4db62b7e738cf862eec5a0eccc549849017cb93b))
+
 ## [4.0.2](https://github.com/CrowdStrike/ember-browser-services/compare/v4.0.1...v4.0.2) (2022-06-08)
 
 
