@@ -1,3 +1,10 @@
+## [4.0.2](https://github.com/CrowdStrike/ember-browser-services/compare/v4.0.1...v4.0.2) (2022-06-08)
+
+
+### Bug Fixes
+
+* **package:** app-re-exports included non-public file ([f2c7ef1](https://github.com/CrowdStrike/ember-browser-services/commit/f2c7ef11c13d2364c79cc0996b2ea0a54b2f6a02))
+
 ## [4.0.1](https://github.com/CrowdStrike/ember-browser-services/compare/v4.0.0...v4.0.1) (2022-06-07)
 
 
