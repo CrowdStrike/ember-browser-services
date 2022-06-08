@@ -51,12 +51,12 @@
     "ember-window-mock": "^0.8.1"
   },
   "devDependencies": {
-    "@babel/core": "7.17.5",
-    "@babel/plugin-proposal-class-properties": "7.16.7",
-    "@babel/plugin-proposal-decorators": "7.17.2",
-    "@babel/plugin-syntax-decorators": "7.17.0",
-    "@babel/plugin-transform-typescript": "7.16.8",
-    "@babel/preset-typescript": "7.16.7",
+    "@babel/core": "7.18.2",
+    "@babel/plugin-proposal-class-properties": "7.17.12",
+    "@babel/plugin-proposal-decorators": "7.18.2",
+    "@babel/plugin-syntax-decorators": "7.17.12",
+    "@babel/plugin-transform-typescript": "7.18.4",
+    "@babel/preset-typescript": "7.17.12",
     "@embroider/addon-dev": "1.3.0",
     "@nullvoxpopuli/eslint-configs": "2.2.22",
     "@semantic-release/changelog": "^5.0.0",
