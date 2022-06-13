@@ -82,7 +82,7 @@
     "ember-page-title": "^7.0.0",
     "ember-qunit": "^5.1.4",
     "ember-resolver": "^8.0.2",
-    "ember-source": "~4.4.0",
+    "ember-source": "~4.5.0",
     "ember-source-channel-url": "^3.0.0",
     "ember-template-lint": "^3.2.0",
     "ember-try": "^2.0.0",
