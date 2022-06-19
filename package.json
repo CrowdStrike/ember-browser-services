@@ -16,7 +16,7 @@
   "devDependencies": {
     "prettier": "^2.2.1"
   },
-  "packageManager": "pnpm@7.2.1",
+  "packageManager": "pnpm@7.3.0",
   "pnpm": {
     "overrides": {
       "@types/eslint": "7.29.0",
