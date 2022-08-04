@@ -31,14 +31,14 @@ function createLocation(target?: Window) {
   });
 }
 
-export function patchWindow(target: any) {
+export function patchWindow(target: any, windowOptions: any = {}) {
   let location = createLocation(target);
 
   let self: any = new Proxy(target, {
     get(target, key, receiver) {
       if (key === 'location') return location;
-      if (key === 'parent') return self;
-      if (key === 'top') return self;
+      if (key === 'parent' && !('parent' in windowOptions)) return self;
+      if (key === 'top' && !('top' in windowOptions)) return self;
 
       return Reflect.get(target, key, receiver);
     },

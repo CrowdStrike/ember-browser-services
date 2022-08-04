@@ -88,11 +88,13 @@ module('Service | browser/window', function (hooks) {
 
       test('location.href can be different from parent.location.href', function (assert) {
         let service = getWindowService(this.owner);
-        service.parent.location.herf = 'http://top.window';
-        service.location.herf = 'http://iframe.window';
 
         assert.notStrictEqual(service.self, service.parent, 'self !== parent');
-        assert.notStrictEqual(service.location, service.parent.location, 'self !== parent (location)');
+        assert.notStrictEqual(
+          service.location,
+          service.parent.location,
+          'self !== parent (location)'
+        );
         assert.strictEqual(service.location.href, 'http://iframe.window/', 'window.location.href');
         assert.strictEqual(
           service.parent.location.href,
