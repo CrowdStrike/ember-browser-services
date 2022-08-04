@@ -78,6 +78,34 @@ module('Service | browser/window', function (hooks) {
         assert.strictEqual(service.parent.location.href, loginPath);
       });
     });
+    module('Stubbing different hrefs in location and parent.location', function (hooks) {
+      setupBrowserFakes(hooks, {
+        window: {
+          location: { href: 'http://iframe.window' },
+          parent: { location: { href: 'http://top.window' } },
+        },
+      });
+
+      test('location.href can be different from parent.location.href', function (assert) {
+        let service = getWindowService(this.owner);
+        service.parent.location.herf = 'http://top.window';
+        service.location.herf = 'http://iframe.window';
+
+        assert.notStrictEqual(service.self, service.parent, 'self !== parent');
+        assert.notStrictEqual(service.location, service.parent.location, 'self !== parent (location)');
+        assert.strictEqual(service.location.href, 'http://iframe.window/', 'window.location.href');
+        assert.strictEqual(
+          service.parent.location.href,
+          'http://top.window/',
+          'window.parent.location.href'
+        );
+        assert.notStrictEqual(
+          service.location.href,
+          service.parent.location.href,
+          'hrefs are different'
+        );
+      });
+    });
 
     module('Stubbing location.origin', function (hooks) {
       setupBrowserFakes(hooks, {
