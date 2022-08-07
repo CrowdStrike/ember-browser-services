@@ -18,7 +18,7 @@ importers:
       '@babel/plugin-proposal-class-properties': 7.18.6
       '@babel/plugin-proposal-decorators': 7.18.10
       '@babel/plugin-syntax-decorators': 7.18.6
-      '@babel/plugin-transform-typescript': 7.18.10
+      '@babel/plugin-transform-typescript': 7.18.12
       '@babel/preset-typescript': 7.18.6
       '@embroider/addon-dev': 1.8.3
       '@embroider/addon-shim': ^1.3.0
@@ -56,7 +56,7 @@ importers:
       '@babel/plugin-proposal-class-properties': 7.18.6_@babel+core@7.18.10
       '@babel/plugin-proposal-decorators': 7.18.10_@babel+core@7.18.10
       '@babel/plugin-syntax-decorators': 7.18.6_@babel+core@7.18.10
-      '@babel/plugin-transform-typescript': 7.18.10_@babel+core@7.18.10
+      '@babel/plugin-transform-typescript': 7.18.12_@babel+core@7.18.10
       '@babel/preset-typescript': 7.18.6_@babel+core@7.18.10
       '@embroider/addon-dev': 1.8.3_rollup@2.77.2
       '@nullvoxpopuli/eslint-configs': 2.2.46_typescript@4.7.4
@@ -1305,8 +1305,8 @@ packages:
       '@babel/core': 7.18.10
       '@babel/helper-plugin-utils': 7.18.9
 
-  /@babel/plugin-transform-typescript/7.18.10_@babel+core@7.18.10:
-    resolution: {integrity: sha512-j2HQCJuMbi88QftIb5zlRu3c7PU+sXNnscqsrjqegoGiCgXR569pEdben9vly5QHKL2ilYkfnSwu64zsZo/VYQ==}
+  /@babel/plugin-transform-typescript/7.18.12_@babel+core@7.18.10:
+    resolution: {integrity: sha512-2vjjam0cum0miPkenUbQswKowuxs/NjMwIKEq0zwegRxXk12C9YOF9STXnaUptITOtOJHKHpzvvWYOjbm6tc0w==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -1487,7 +1487,7 @@ packages:
       '@babel/core': 7.18.10
       '@babel/helper-plugin-utils': 7.18.6
       '@babel/helper-validator-option': 7.18.6
-      '@babel/plugin-transform-typescript': 7.18.10_@babel+core@7.18.10
+      '@babel/plugin-transform-typescript': 7.18.12_@babel+core@7.18.10
     transitivePeerDependencies:
       - supports-color
     dev: true
