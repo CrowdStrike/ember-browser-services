@@ -68,7 +68,7 @@
     "@types/ember__test-helpers": "^2.0.2",
     "@types/qunit": "^2.11.3",
     "babel-eslint": "10.1.0",
-    "concurrently": "7.3.0",
+    "concurrently": "7.5.0",
     "eslint": "^7.0.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-decorator-position": "4.0.1",

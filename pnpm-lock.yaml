@@ -32,7 +32,7 @@ importers:
       '@types/ember__test-helpers': ^2.0.2
       '@types/qunit': ^2.11.3
       babel-eslint: 10.1.0
-      concurrently: 7.3.0
+      concurrently: 7.5.0
       ember-window-mock: ^0.8.1
       eslint: ^7.0.0
       eslint-config-prettier: 8.5.0
@@ -69,7 +69,7 @@ importers:
       '@types/ember__test-helpers': 2.6.1
       '@types/qunit': 2.19.2
       babel-eslint: 10.1.0_eslint@7.32.0
-      concurrently: 7.3.0
+      concurrently: 7.5.0
       eslint: 7.32.0
       eslint-config-prettier: 8.5.0_eslint@7.32.0
       eslint-plugin-decorator-position: 4.0.1_eslint@7.32.0
@@ -5578,13 +5578,13 @@ packages:
       typedarray: 0.0.6
     dev: true
 
-  /concurrently/7.3.0:
-    resolution: {integrity: sha512-IiDwm+8DOcFEInca494A8V402tNTQlJaYq78RF2rijOrKEk/AOHTxhN4U1cp7GYKYX5Q6Ymh1dLTBlzIMN0ikA==}
+  /concurrently/7.5.0:
+    resolution: {integrity: sha512-5E3mwiS+i2JYBzr5BpXkFxOnleZTMsG+WnE/dCG4/P+oiVXrbmrBwJ2ozn4SxwB2EZDrKR568X+puVohxz3/Mg==}
     engines: {node: ^12.20.0 || ^14.13.0 || >=16.0.0}
     hasBin: true
     dependencies:
       chalk: 4.1.2
-      date-fns: 2.28.0
+      date-fns: 2.29.3
       lodash: 4.17.21
       rxjs: 7.5.6
       shell-quote: 1.7.3
@@ -6128,6 +6128,11 @@ packages:
 
   /date-fns/2.28.0:
     resolution: {integrity: sha512-8d35hViGYx/QH0icHYCeLmsLmMUheMmTyV9Fcm6gvNwdw31yXXH+O85sOBJ+OLnLQMKZowvpKb6FgMIQjcpvQw==}
+    engines: {node: '>=0.11'}
+    dev: true
+
+  /date-fns/2.29.3:
+    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
     engines: {node: '>=0.11'}
     dev: true
 
