@@ -8,7 +8,7 @@
     "ci:update": "npx ember-ci-update"
   },
   "volta": {
-    "node": "16.16.0"
+    "node": "16.18.1"
   },
   "engines": {
     "node": "12.* || >= 14"
