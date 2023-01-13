@@ -1,0 +1,39 @@
+name: Build and Assert Assets Exists
+description: Build the package and assert that file contents exist as we expect
+runs:
+  using: "composite"
+  steps:
+  - name: Build and Assert Output
+    shell: bash
+    run: |-
+      echo '
+        target: ${{ env.dist }}
+        setup:
+          run: pnpm build:js
+          cwd: ./ember-browser-services
+        expect: |
+          index.js
+          index.js.map
+          index.d.ts
+          index.d.ts.map
+          services/browser/document.d.ts
+          services/browser/document.js
+          services/browser/document.js.map
+          services/browser/local-storage.d.ts
+          services/browser/local-storage.js
+          services/browser/local-storage.js.map
+          services/browser/navigator.d.ts
+          services/browser/navigator.js
+          services/browser/navigator.js.map
+          test-support/index.js
+          test-support/index.js.map
+          test-support/index.d.ts
+          
+      ' >> assert-contents.config.yml
+      npx assert-folder-contents
+
+  - name: Upload dist assets to cache
+    uses: actions/upload-artifact@v3
+    with:
+      name: dist
+      path: ${{ env.dist }}
