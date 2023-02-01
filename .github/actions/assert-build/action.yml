@@ -9,7 +9,7 @@ runs:
       echo '
         target: ${{ env.dist }}
         setup:
-          run: pnpm build:js
+          run: pnpm build
           cwd: ./ember-browser-services
         expect: |
           index.js
@@ -28,7 +28,7 @@ runs:
           test-support/index.js
           test-support/index.js.map
           test-support/index.d.ts
-          
+
       ' >> assert-contents.config.yml
       npx assert-folder-contents
 

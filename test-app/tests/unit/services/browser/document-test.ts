@@ -3,10 +3,10 @@ import { setupTest } from 'ember-qunit';
 
 import { setupBrowserFakes } from 'ember-browser-services/test-support';
 
-import type ApplicationInstance from '@ember/application/instance';
+import type Owner from '@ember/owner';
 import type { DocumentService } from 'ember-browser-services/types';
 
-function getDocumentService(owner: ApplicationInstance): DocumentService {
+function getDocumentService(owner: Owner): DocumentService {
   // the type of owner keeps being incorrect...
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
@@ -35,11 +35,19 @@ module('Unit | Service | browser/document', function (hooks) {
       let service = getDocumentService(this.owner);
 
       assert.strictEqual(service.title, 'Foo');
-      assert.notEqual(service.title, document.title, 'real document is unchanged');
+      assert.notEqual(
+        service.title,
+        document.title,
+        'real document is unchanged'
+      );
 
       service.title = 'Bar';
       assert.strictEqual(service.title, 'Bar');
-      assert.notEqual(service.title, document.title, 'real document remains unchanged');
+      assert.notEqual(
+        service.title,
+        document.title,
+        'real document remains unchanged'
+      );
     });
   });
 

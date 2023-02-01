@@ -17,9 +17,9 @@ import type { Class } from '../../types';
  */
 export function proxyService<BrowserAPI>(
   ObjectToProxy: BrowserAPI | Class<BrowserAPI>
-): typeof Service & BrowserAPI {
+): Service & BrowserAPI {
   type ProxyKey = BrowserAPI | Service;
-  type CreateMethod = typeof Service['create'];
+  type CreateMethod = (typeof Service)['create'];
 
   // extending the types for the static method create is too hard / impossible
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -27,7 +27,11 @@ export function proxyService<BrowserAPI>(
 
   function instanceHandlerFor(browserObject: BrowserAPI) {
     return {
-      get<K extends keyof ProxyKey>(targetInstance: Service, prop: K, receiver: unknown) {
+      get<K extends keyof ProxyKey>(
+        targetInstance: Service,
+        prop: K,
+        receiver: unknown
+      ) {
         if (prop in targetInstance) {
           return Reflect.get(targetInstance, prop, receiver);
         }
@@ -60,7 +64,9 @@ export function proxyService<BrowserAPI>(
     };
   }
 
-  function isConstructable(proxyTo: BrowserAPI | Class<BrowserAPI>): proxyTo is Class<BrowserAPI> {
+  function isConstructable(
+    proxyTo: BrowserAPI | Class<BrowserAPI>
+  ): proxyTo is Class<BrowserAPI> {
     return typeof proxyTo === 'function';
   }
 
@@ -74,7 +80,9 @@ export function proxyService<BrowserAPI>(
     // https://github.com/emberjs/ember.js/blob/f85cefe9855b2521b02800d4bb2b68da7db2a214/packages/%40ember/service/index.js#L68-L72
     static isServiceFactory = true;
 
-    static create(injections: Parameters<CreateMethod>): ReturnType<CreateMethod> {
+    static create(
+      injections: Parameters<CreateMethod>
+    ): ReturnType<CreateMethod> {
       let serviceInstance = class ProxiedService extends Service {
         // @private
         declare __browser_object__: BrowserAPI;
@@ -88,7 +96,9 @@ export function proxyService<BrowserAPI>(
          * */
       }.create(injections);
 
-      let browserObject = isConstructable(ObjectToProxy) ? new ObjectToProxy() : ObjectToProxy;
+      let browserObject = isConstructable(ObjectToProxy)
+        ? new ObjectToProxy()
+        : ObjectToProxy;
 
       serviceInstance.__browser_object__ = browserObject;
 
@@ -101,5 +111,5 @@ export function proxyService<BrowserAPI>(
     }
   }
 
-  return ProxyCreator as unknown as typeof Service & BrowserAPI;
+  return ProxyCreator as unknown as Service & BrowserAPI;
 }

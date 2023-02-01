@@ -1,13 +1,14 @@
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 
-import { setupBrowserFakes } from 'ember-browser-services/test-support';
 import RSVP from 'rsvp';
 
-import type ApplicationInstance from '@ember/application/instance';
+import { setupBrowserFakes } from 'ember-browser-services/test-support';
+
+import type Owner from '@ember/owner';
 import type { NavigatorService } from 'ember-browser-services/types';
 
-function getNavigatorService(owner: ApplicationInstance) {
+function getNavigatorService(owner: Owner) {
   // the type of owner keeps being incorrect...
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore

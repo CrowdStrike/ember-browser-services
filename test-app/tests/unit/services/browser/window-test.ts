@@ -3,10 +3,10 @@ import { setupTest } from 'ember-qunit';
 
 import { setupBrowserFakes } from 'ember-browser-services/test-support';
 
-import type ApplicationInstance from '@ember/application/instance';
+import type Owner from '@ember/owner';
 import type { WindowService } from 'ember-browser-services/types';
 
-function getWindowService(owner: ApplicationInstance): WindowService {
+function getWindowService(owner: Owner): WindowService {
   // the type of owner keeps being incorrect...
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
@@ -55,7 +55,11 @@ module('Service | browser/window', function (hooks) {
         let service = getWindowService(this.owner);
 
         // verify that the initial config works
-        assert.strictEqual(service.location.href, 'http://init.ial/', 'window.location.href');
+        assert.strictEqual(
+          service.location.href,
+          'http://init.ial/',
+          'window.location.href'
+        );
         assert.strictEqual(
           service.parent.location.href,
           'http://init.ial/',
@@ -71,7 +75,10 @@ module('Service | browser/window', function (hooks) {
         // We'll redirect away from the test if the replacement methods don't work /
         // are incorrect / have spelling errors
         assert.notEqual(service.location.href, window.location.href);
-        assert.notEqual(service.parent.location.href, window.parent.location.href);
+        assert.notEqual(
+          service.parent.location.href,
+          window.parent.location.href
+        );
 
         // verify that setting actually works
         assert.strictEqual(service.location.href, loginPath);
@@ -89,8 +96,16 @@ module('Service | browser/window', function (hooks) {
       test('can read from the stubbed origin', function (assert) {
         let service = getWindowService(this.owner);
 
-        assert.strictEqual(service.location.href, 'http://init.ial/', 'window.location.href');
-        assert.strictEqual(service.location.origin, 'http://init.ial', 'window.location.origin');
+        assert.strictEqual(
+          service.location.href,
+          'http://init.ial/',
+          'window.location.href'
+        );
+        assert.strictEqual(
+          service.location.origin,
+          'http://init.ial',
+          'window.location.origin'
+        );
       });
     });
   });
@@ -128,7 +143,10 @@ module('Service | browser/window', function (hooks) {
         service.parent.location.href = '/login';
 
         assert.ok(service.location.origin);
-        assert.strictEqual(service.location.origin, service.parent.location.origin);
+        assert.strictEqual(
+          service.location.origin,
+          service.parent.location.origin
+        );
       });
     });
   });

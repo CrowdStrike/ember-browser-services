@@ -1,4 +1,5 @@
 import window from 'ember-window-mock';
+
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import locationFactory from 'ember-window-mock/test-support/-private/mock/location';

@@ -4,30 +4,33 @@
   "license": "MIT",
   "author": "CrowdStrike UX Team",
   "scripts": {
+    "release": "changeset publish",
     "build": "pnpm --filter ember-browser-services build",
-    "ci:update": "npx ember-ci-update"
+    "lint": "pnpm --filter '*' lint",
+    "lint:fix": "pnpm --filter '*' lint:fix",
+    "format": "pnpm --filter '*' format",
+    "format:check": "pnpm --filter '*' format:check"
   },
   "volta": {
-    "node": "16.16.0"
-  },
-  "engines": {
-    "node": "12.* || >= 14"
+    "node": "18.13.0"
   },
   "devDependencies": {
-    "prettier": "^2.2.1"
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.0",
+    "prettier": "^2.8.3"
   },
-  "packageManager": "pnpm@7.8.0",
   "pnpm": {
     "overrides": {
-      "@types/eslint": "7.29.0",
-      "mustache": "^4.2.0"
+      "@types/eslint": "^8.0.0"
     },
     "overrides-notes": {
-      "@types/eslint": "webpack brings in @types/eslint@8, which breaks our type checking",
-      "mustache": "ember-cli -> testem -> consolidate -> mustache is ancient"
+      "@types/eslint": "ember-template-lint > @lint-todo/utils pulls in an old version of @types/eslint"
     },
     "peerDependencyRules": {
-      "ignoreMissing": ["@glimmer/component"]
+      "ignoreMissing": [
+        "@glimmer/component",
+        "webpack"
+      ]
     }
   }
 }

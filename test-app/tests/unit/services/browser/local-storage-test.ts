@@ -3,10 +3,10 @@ import { setupTest } from 'ember-qunit';
 
 import { setupBrowserFakes } from 'ember-browser-services/test-support';
 
-import type ApplicationInstance from '@ember/application/instance';
+import type Owner from '@ember/owner';
 import type { LocalStorageService } from 'ember-browser-services/types';
 
-function getLocalStorageService(owner: ApplicationInstance) {
+function getLocalStorageService(owner: Owner) {
   // the type of owner keeps being incorrect...
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
@@ -46,7 +46,11 @@ module('Service | browser/local-storage', function (hooks) {
     assertGetSet(['a', 'b'], 'a,b');
     assertGetSet([{}], '[object Object]');
 
-    assert.strictEqual(localStorage.getItem('foo'), null, 'real localStorage is unchanged');
+    assert.strictEqual(
+      localStorage.getItem('foo'),
+      null,
+      'real localStorage is unchanged'
+    );
 
     service.removeItem('foo');
     assert.strictEqual(service.getItem('foo'), null);
