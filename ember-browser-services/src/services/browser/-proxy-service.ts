@@ -17,7 +17,7 @@ import type { Class } from '../../types';
  */
 export function proxyService<BrowserAPI>(
   ObjectToProxy: BrowserAPI | Class<BrowserAPI>
-): typeof Service & BrowserAPI {
+): Service & BrowserAPI {
   type ProxyKey = BrowserAPI | Service;
   type CreateMethod = (typeof Service)['create'];
 
@@ -111,5 +111,5 @@ export function proxyService<BrowserAPI>(
     }
   }
 
-  return ProxyCreator as unknown as typeof Service & BrowserAPI;
+  return ProxyCreator as unknown as Service & BrowserAPI;
 }
