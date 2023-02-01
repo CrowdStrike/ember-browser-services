@@ -3,11 +3,11 @@ import { setupTest } from 'ember-qunit';
 
 import { setupBrowserFakes } from 'ember-browser-services/test-support';
 
-import type ApplicationInstance from '@ember/application/instance';
+import type Owner from '@ember/owner';
 import type { SessionStorageService } from 'ember-browser-services/types';
 
 function getSessionStorageService(
-  owner: ApplicationInstance
+  owner: Owner
 ): SessionStorageService {
   // the type of owner keeps being incorrect...
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
