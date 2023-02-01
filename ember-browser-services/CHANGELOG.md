@@ -1,3 +1,5 @@
+# ember-browser-services
+
 ## [4.0.3](https://github.com/CrowdStrike/ember-browser-services/compare/v4.0.2...v4.0.3) (2022-06-08)
 
 ### Bug Fixes
