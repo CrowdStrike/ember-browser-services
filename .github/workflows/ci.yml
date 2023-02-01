@@ -45,19 +45,6 @@ jobs:
 
 
 
-  commits:
-    name: Commit Messages
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: ./.github/actions/pnpm
-      - uses: wagoid/commitlint-github-action@v5.2.0
-        with:
-          configFile: 'commitlint.config.cjs'
-
-
   build:
     name: Build Tests
     needs: [install_dependencies]
@@ -97,7 +84,7 @@ jobs:
           pnpm --filter test-app exec tsc -v;
           pnpm --filter test-app exec tsc --build;
 
-  
+
 
 
   default_tests:
@@ -160,8 +147,7 @@ jobs:
           --skip-cleanup
 
 
-
-
+  # https://github.com/changesets/action
   release:
     name: Release
     timeout-minutes: 5
@@ -179,12 +165,16 @@ jobs:
           persist-credentials: false
       - uses: ./.github/actions/pnpm
       - uses: ./.github/actions/download-built-package
-      - name: Release
-        run: ./node_modules/.bin/semantic-release
-        working-directory: ./ember-browser-services
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # This expects you to have a script called release which does a build for your packages and calls changeset publish
+          publish: pnpm release
+          title: "Release Preview"
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 
 
