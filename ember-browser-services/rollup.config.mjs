@@ -1,5 +1,6 @@
 // @ts-nocheck
 import ts from 'rollup-plugin-ts';
+import copy from 'rollup-plugin-copy';
 import { defineConfig } from 'rollup';
 
 import { Addon } from '@embroider/addon-dev/rollup';
@@ -57,5 +58,13 @@ export default defineConfig({
     // addon.keepAssets(['**/*.css']),
 
     addon.clean(),
+
+    // Copy Readme and License into published package
+    copy({
+      targets: [
+        { src: '../README.md', dest: '.' },
+        { src: '../LICENSE.md', dest: '.' },
+      ],
+    }),
   ],
 });
