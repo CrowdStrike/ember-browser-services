@@ -12,7 +12,6 @@ import {
 import { patchWindow } from './window-mock-augments';
 
 import type { RecursivePartial } from '../types';
-import type { TestContext } from '@ember/test-helpers';
 
 type Fakes = {
   window?: boolean | typeof Service | RecursivePartial<Window>;
@@ -25,7 +24,13 @@ type Fakes = {
 export function setupBrowserFakes(hooks: NestedHooks, options: Fakes): void {
   setupWindowMock(hooks);
 
-  hooks.beforeEach(function (this: TestContext) {
+  // Switched to 'any' from 'TestContext' due to awkward migration period from
+  // DT to built-in-types.
+  // I don't know if it's possible to support both fake test-helper types and real ones
+  // (simultaneously)
+  //
+  // Additionally, these types have no bearing on end-user behavior, so this is low risk.
+  hooks.beforeEach(function (this: any) {
     // the type for the owner keeps being wrong............
     let owner = this.owner as unknown as {
       register: (name: string, thing: unknown) => void;
