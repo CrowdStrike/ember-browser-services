@@ -80,7 +80,7 @@
     "ember-resolver": "^8.0.2",
     "ember-source": "~4.6.0",
     "ember-source-channel-url": "^3.0.0",
-    "ember-template-lint": "^3.2.0",
+    "ember-template-lint": "^5.3.3",
     "ember-try": "^2.0.0",
     "eslint": "^8.33.0",
     "eslint-plugin-decorator-position": "^5.0.2",

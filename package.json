@@ -20,6 +20,12 @@
     "prettier": "^2.8.3"
   },
   "pnpm": {
+    "overrides": {
+      "@types/eslint": "^8.0.0"
+    },
+    "overrides-notes": {
+      "@types/eslint": "ember-template-lint > @lint-todo/utils pulls in an old version of @types/eslint"
+    },
     "peerDependencyRules": {
       "ignoreMissing": [
         "@glimmer/component",
