@@ -6,9 +6,7 @@ import { setupBrowserFakes } from 'ember-browser-services/test-support';
 import type Owner from '@ember/owner';
 import type { SessionStorageService } from 'ember-browser-services/types';
 
-function getSessionStorageService(
-  owner: Owner
-): SessionStorageService {
+function getSessionStorageService(owner: Owner): SessionStorageService {
   // the type of owner keeps being incorrect...
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
