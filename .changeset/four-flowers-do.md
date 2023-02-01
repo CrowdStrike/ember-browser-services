@@ -4,7 +4,7 @@
 
 Address an issue where the types of each of the browser services did not have sufficient overlap with `Service`.
 
-This is required for for folks using more modern TypeScript in ember apps,
+This is required for folks using more modern TypeScript in ember apps,
 where the service-name argument is passed to the `@service` decorator.
 
 Previously, an error would occur:
