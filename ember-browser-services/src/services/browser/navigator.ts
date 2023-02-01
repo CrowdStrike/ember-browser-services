@@ -1,6 +1,6 @@
-import '@ember/service';
+import "@ember/service";
 
-import { proxyService } from './-proxy-service';
+import { proxyService } from "./-proxy-service";
 
 const NavigatorProxyService = proxyService(navigator);
 
@@ -14,8 +14,8 @@ const NavigatorProxyService = proxyService(navigator);
  */
 export default NavigatorProxyService;
 
-declare module '@ember/service' {
+declare module "@ember/service" {
   interface Registry {
-    'browser/navigator': typeof NavigatorProxyService;
+    "browser/navigator": typeof NavigatorProxyService;
   }
 }

@@ -4,4 +4,4 @@ export {
   NavigatorService,
   SessionStorageService,
   WindowService,
-} from './types';
+} from "./types";

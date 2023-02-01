@@ -4,8 +4,12 @@
   "license": "MIT",
   "author": "CrowdStrike UX Team",
   "scripts": {
+    "release": "changeset publish",
     "build": "pnpm --filter ember-browser-services build",
-    "ci:update": "npx ember-ci-update"
+    "lint": "pnpm --filter '*' lint",
+    "lint:fix": "pnpm --filter '*' lint:fix",
+    "format": "pnpm --filter '*' format",
+    "format:check": "pnpm --filter '*' format:check"
   },
   "volta": {
     "node": "18.13.0"
@@ -13,19 +17,13 @@
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.8.3"
   },
-  "packageManager": "pnpm@7.8.0",
   "pnpm": {
-    "overrides": {
-      "mustache": "^4.2.0"
-    },
-    "overrides-notes": {
-      "mustache": "ember-cli -> testem -> consolidate -> mustache is ancient"
-    },
     "peerDependencyRules": {
       "ignoreMissing": [
-        "@glimmer/component"
+        "@glimmer/component",
+        "webpack"
       ]
     }
   }

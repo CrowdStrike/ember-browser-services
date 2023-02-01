@@ -6,11 +6,15 @@ import { setupBrowserFakes } from 'ember-browser-services/test-support';
 import type ApplicationInstance from '@ember/application/instance';
 import type { SessionStorageService } from 'ember-browser-services/types';
 
-function getSessionStorageService(owner: ApplicationInstance): SessionStorageService {
+function getSessionStorageService(
+  owner: ApplicationInstance
+): SessionStorageService {
   // the type of owner keeps being incorrect...
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  return owner.lookup('service:browser/session-storage') as SessionStorageService;
+  return owner.lookup(
+    'service:browser/session-storage'
+  ) as SessionStorageService;
 }
 
 module('Service | browser/session-storage', function (hooks) {
@@ -46,7 +50,11 @@ module('Service | browser/session-storage', function (hooks) {
     assertGetSet(['a', 'b'], 'a,b');
     assertGetSet([{}], '[object Object]');
 
-    assert.strictEqual(sessionStorage.getItem('foo'), null, 'real sessionStorage is unchanged');
+    assert.strictEqual(
+      sessionStorage.getItem('foo'),
+      null,
+      'real sessionStorage is unchanged'
+    );
 
     service.removeItem('foo');
     assert.strictEqual(service.getItem('foo'), null);

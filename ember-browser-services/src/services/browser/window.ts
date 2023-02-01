@@ -1,6 +1,6 @@
-import '@ember/service';
+import "@ember/service";
 
-import { proxyService } from './-proxy-service';
+import { proxyService } from "./-proxy-service";
 
 /**
  * In order to have thorough testing, we should only interact with the window
@@ -20,8 +20,8 @@ declare global {
   }
 }
 
-declare module '@ember/service' {
+declare module "@ember/service" {
   interface Registry {
-    'browser/window': typeof WindowProxyService;
+    "browser/window": typeof WindowProxyService;
   }
 }

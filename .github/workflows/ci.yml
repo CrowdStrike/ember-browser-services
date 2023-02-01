@@ -24,26 +24,17 @@ jobs:
       - uses: ./.github/actions/pnpm
 
 
-  eslint:
-    name: ESLint {{ matrix.path }}
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
     needs: [install_dependencies]
-    strategy:
-      fail-fast: true
-      matrix:
-        path:
-          - ./ember-browser-services
-          - ./test-app
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/pnpm
       - name: Lint
-        run: pnpm eslint .
-        working-directory: ${{ matrix.path }}
-
-
-
-
+        run: pnpm lint
+      - name: Formatting
+        run: pnpm format:check
 
   build:
     name: Build Tests

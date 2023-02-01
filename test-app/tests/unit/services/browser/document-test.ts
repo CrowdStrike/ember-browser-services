@@ -35,11 +35,19 @@ module('Unit | Service | browser/document', function (hooks) {
       let service = getDocumentService(this.owner);
 
       assert.strictEqual(service.title, 'Foo');
-      assert.notEqual(service.title, document.title, 'real document is unchanged');
+      assert.notEqual(
+        service.title,
+        document.title,
+        'real document is unchanged'
+      );
 
       service.title = 'Bar';
       assert.strictEqual(service.title, 'Bar');
-      assert.notEqual(service.title, document.title, 'real document remains unchanged');
+      assert.notEqual(
+        service.title,
+        document.title,
+        'real document remains unchanged'
+      );
     });
   });
 

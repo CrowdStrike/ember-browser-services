@@ -1,8 +1,9 @@
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 
-import { setupBrowserFakes } from 'ember-browser-services/test-support';
 import RSVP from 'rsvp';
+
+import { setupBrowserFakes } from 'ember-browser-services/test-support';
 
 import type ApplicationInstance from '@ember/application/instance';
 import type { NavigatorService } from 'ember-browser-services/types';

@@ -46,7 +46,11 @@ module('Service | browser/local-storage', function (hooks) {
     assertGetSet(['a', 'b'], 'a,b');
     assertGetSet([{}], '[object Object]');
 
-    assert.strictEqual(localStorage.getItem('foo'), null, 'real localStorage is unchanged');
+    assert.strictEqual(
+      localStorage.getItem('foo'),
+      null,
+      'real localStorage is unchanged'
+    );
 
     service.removeItem('foo');
     assert.strictEqual(service.getItem('foo'), null);
