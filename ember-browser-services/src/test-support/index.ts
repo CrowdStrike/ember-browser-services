@@ -1,18 +1,18 @@
-import Service from "@ember/service";
+import Service from '@ember/service';
 
-import window from "ember-window-mock";
+import window from 'ember-window-mock';
 
-import { setupWindowMock } from "ember-window-mock/test-support";
+import { setupWindowMock } from 'ember-window-mock/test-support';
 
-import { proxyService } from "../services/browser/-proxy-service";
+import { proxyService } from '../services/browser/-proxy-service';
 import {
   FakeLocalStorageService,
   FakeSessionStorageService,
-} from "./-private/web-storage";
-import { patchWindow } from "./window-mock-augments";
+} from './-private/web-storage';
+import { patchWindow } from './window-mock-augments';
 
-import type { RecursivePartial } from "../types";
-import type { TestContext } from "@ember/test-helpers";
+import type { RecursivePartial } from '../types';
+import type { TestContext } from '@ember/test-helpers';
 
 type Fakes = {
   window?: boolean | typeof Service | RecursivePartial<Window>;
@@ -38,22 +38,22 @@ export function setupBrowserFakes(hooks: NestedHooks, options: Fakes): void {
       let patched = patchWindow(window);
       let service = maybeMake(options.window, patched);
 
-      owner.register("service:browser/window", service);
+      owner.register('service:browser/window', service);
     }
 
     if (options.document) {
       let service = maybeMake(options.document, window.document);
 
-      owner.register("service:browser/document", service);
+      owner.register('service:browser/document', service);
     }
 
     if (options.localStorage) {
-      owner.register("service:browser/local-storage", FakeLocalStorageService);
+      owner.register('service:browser/local-storage', FakeLocalStorageService);
     }
 
     if (options.sessionStorage) {
       owner.register(
-        "service:browser/session-storage",
+        'service:browser/session-storage',
         FakeSessionStorageService
       );
     }
@@ -61,7 +61,7 @@ export function setupBrowserFakes(hooks: NestedHooks, options: Fakes): void {
     if (options.navigator) {
       let service = maybeMake(options.navigator, window.navigator);
 
-      owner.register("service:browser/navigator", service);
+      owner.register('service:browser/navigator', service);
     }
   });
 }
@@ -89,7 +89,7 @@ export function maybeMake<
     return target;
   }
 
-  if (typeof maybeImplementation === "object") {
+  if (typeof maybeImplementation === 'object') {
     applyStub(target, maybeImplementation);
 
     return proxyService(target);
@@ -113,7 +113,7 @@ function applyStub(root: any, partial?: any) {
 
     if (Array.isArray(value)) {
       root[key] = value;
-    } else if (typeof value === "object") {
+    } else if (typeof value === 'object') {
       applyStub(root[key], value);
     } else {
       root[key] = value;

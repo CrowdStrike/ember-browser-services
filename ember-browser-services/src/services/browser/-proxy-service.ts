@@ -1,6 +1,6 @@
-import Service from "@ember/service";
+import Service from '@ember/service';
 
-import type { Class } from "../../types";
+import type { Class } from '../../types';
 
 /**
  * Allows Services to behave as Proxy objects for real objects, such as
@@ -19,7 +19,7 @@ export function proxyService<BrowserAPI>(
   ObjectToProxy: BrowserAPI | Class<BrowserAPI>
 ): typeof Service & BrowserAPI {
   type ProxyKey = BrowserAPI | Service;
-  type CreateMethod = (typeof Service)["create"];
+  type CreateMethod = (typeof Service)['create'];
 
   // extending the types for the static method create is too hard / impossible
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -38,7 +38,7 @@ export function proxyService<BrowserAPI>(
 
         let value = browserObject[prop];
 
-        if (typeof value === "function") {
+        if (typeof value === 'function') {
           // prevents the error "Illegal Invocation"
           // which can sometimes happen due to losing the "this" depending on
           // the invocation context at the call site
@@ -67,7 +67,7 @@ export function proxyService<BrowserAPI>(
   function isConstructable(
     proxyTo: BrowserAPI | Class<BrowserAPI>
   ): proxyTo is Class<BrowserAPI> {
-    return typeof proxyTo === "function";
+    return typeof proxyTo === 'function';
   }
 
   // We have to untype the Service, because...
@@ -107,7 +107,7 @@ export function proxyService<BrowserAPI>(
 
     constructor(...args: unknown[]) {
       super(...args);
-      throw new Error("ProxyCreator is not new-able");
+      throw new Error('ProxyCreator is not new-able');
     }
   }
 

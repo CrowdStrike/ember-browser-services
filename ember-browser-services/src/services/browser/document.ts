@@ -1,6 +1,6 @@
-import "@ember/service";
+import '@ember/service';
 
-import { proxyService } from "./-proxy-service";
+import { proxyService } from './-proxy-service';
 
 const DocumentProxyService = proxyService(document);
 
@@ -14,8 +14,8 @@ const DocumentProxyService = proxyService(document);
  */
 export default DocumentProxyService;
 
-declare module "@ember/service" {
+declare module '@ember/service' {
   interface Registry {
-    "browser/document": typeof DocumentProxyService;
+    'browser/document': typeof DocumentProxyService;
   }
 }

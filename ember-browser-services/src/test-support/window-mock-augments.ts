@@ -1,10 +1,10 @@
-import window from "ember-window-mock";
+import window from 'ember-window-mock';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
-import locationFactory from "ember-window-mock/test-support/-private/mock/location";
+import locationFactory from 'ember-window-mock/test-support/-private/mock/location';
 
-const AUGMENTS: Array<string | symbol> = ["origin"];
+const AUGMENTS: Array<string | symbol> = ['origin'];
 
 function createLocation(target?: Window) {
   let initialHref = target?.location?.href ?? window.location.href;
@@ -37,14 +37,14 @@ export function patchWindow(target: any) {
 
   let self: any = new Proxy(target, {
     get(target, key, receiver) {
-      if (key === "location") return location;
-      if (key === "parent") return self;
-      if (key === "top") return self;
+      if (key === 'location') return location;
+      if (key === 'parent') return self;
+      if (key === 'top') return self;
 
       return Reflect.get(target, key, receiver);
     },
     set(target, key, value, receiver) {
-      if (key === "location") {
+      if (key === 'location') {
         throw new Error(`location cannot be set on window`);
       }
 

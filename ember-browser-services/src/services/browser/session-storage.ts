@@ -1,6 +1,6 @@
-import "@ember/service";
+import '@ember/service';
 
-import { proxyService } from "./-proxy-service";
+import { proxyService } from './-proxy-service';
 
 /**
  * In order to have thorough testing, we should only interact with the session storage
@@ -14,8 +14,8 @@ const SessionStorageProxyService = proxyService(sessionStorage);
 
 export default SessionStorageProxyService;
 
-declare module "@ember/service" {
+declare module '@ember/service' {
   interface Registry {
-    "browser/session-storage": typeof SessionStorageProxyService;
+    'browser/session-storage': typeof SessionStorageProxyService;
   }
 }
