@@ -15,6 +15,7 @@
 /coverage/
 !.*
 *.md
+*.html
 .eslintcache
 
 # ember-try
