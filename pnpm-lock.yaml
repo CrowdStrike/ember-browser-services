@@ -26,7 +26,7 @@ importers:
       '@babel/preset-typescript': 7.18.6
       '@embroider/addon-dev': 3.0.0
       '@embroider/addon-shim': ^1.3.0
-      '@nullvoxpopuli/eslint-configs': 3.1.1
+      '@nullvoxpopuli/eslint-configs': 3.1.2
       '@types/ember__application': ^4.0.0
       '@types/ember__engine': ^4.0.0
       '@types/ember__object': ^4.0.0
@@ -61,7 +61,7 @@ importers:
       '@babel/plugin-transform-typescript': 7.20.13_@babel+core@7.20.12
       '@babel/preset-typescript': 7.18.6_@babel+core@7.20.12
       '@embroider/addon-dev': 3.0.0_rollup@3.12.1
-      '@nullvoxpopuli/eslint-configs': 3.1.1_bbtlhgum6n7xp33ncdguuetboi
+      '@nullvoxpopuli/eslint-configs': 3.1.2_bbtlhgum6n7xp33ncdguuetboi
       '@types/ember__application': 4.0.5_@babel+core@7.20.12
       '@types/ember__engine': 4.0.4_@babel+core@7.20.12
       '@types/ember__object': 4.0.5_@babel+core@7.20.12
@@ -2116,56 +2116,6 @@ packages:
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dev: true
 
-  /@nullvoxpopuli/eslint-configs/3.1.1_bbtlhgum6n7xp33ncdguuetboi:
-    resolution: {integrity: sha512-7ERkp5DJCC/5RryMD27Kc6NWJsT19rZab5MuaeDEXND6fGiNSnVkjh/b38Qh7U3VGzG8YRZ5VMa9BnhWO29BoA==}
-    engines: {node: '>= v16.0.0'}
-    peerDependencies:
-      '@babel/core': ^7.20.12
-      '@babel/eslint-parser': ^7.19.1
-      '@typescript-eslint/eslint-plugin': ^5.49.0
-      '@typescript-eslint/parser': ^5.49.0
-      eslint: ^7.0.0 || ^8.0.0
-      eslint-plugin-ember: ^11.4.5
-      eslint-plugin-qunit: ^7.3.4
-      prettier: ^2.8.3
-    peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      '@babel/eslint-parser':
-        optional: true
-      '@typescript-eslint/eslint-plugin':
-        optional: true
-      '@typescript-eslint/parser':
-        optional: true
-      eslint-plugin-ember:
-        optional: true
-      eslint-plugin-qunit:
-        optional: true
-      prettier:
-        optional: true
-    dependencies:
-      '@babel/core': 7.20.12
-      '@babel/eslint-parser': 7.19.1_b3mcivpi6zqbotlvqqcfprcnry
-      '@typescript-eslint/eslint-plugin': 5.50.0_go4drrxstycfikanvu45pi4vgq
-      '@typescript-eslint/parser': 5.50.0_4vsywjlpuriuw3tl5oq6zy5a64
-      cosmiconfig: 8.0.0
-      eslint: 8.33.0
-      eslint-import-resolver-typescript: 3.5.3_ohdts44xlqyeyrlje4qnefqeay
-      eslint-plugin-decorator-position: 5.0.2_crxq4lgcdsr4eamkidcj6wssqe
-      eslint-plugin-ember: 11.4.6_eslint@8.33.0
-      eslint-plugin-import: 2.27.5_nowqz4jutkd4a233czbfk7jsgu
-      eslint-plugin-json: 3.1.0
-      eslint-plugin-n: 15.6.1_eslint@8.33.0
-      eslint-plugin-prettier: 4.2.1_6xprzernlpxwjedpj2snzq4bpq
-      eslint-plugin-simple-import-sort: 10.0.0_eslint@8.33.0
-      prettier: 2.8.3
-      prettier-plugin-ember-template-tag: 0.3.1
-    transitivePeerDependencies:
-      - eslint-config-prettier
-      - eslint-import-resolver-webpack
-      - supports-color
-    dev: true
-
   /@nullvoxpopuli/eslint-configs/3.1.1_c4muefq47nrofd4tw7fwznv5tm:
     resolution: {integrity: sha512-7ERkp5DJCC/5RryMD27Kc6NWJsT19rZab5MuaeDEXND6fGiNSnVkjh/b38Qh7U3VGzG8YRZ5VMa9BnhWO29BoA==}
     engines: {node: '>= v16.0.0'}
@@ -2211,6 +2161,56 @@ packages:
       eslint-plugin-simple-import-sort: 10.0.0_eslint@8.33.0
       prettier: 2.8.3
       prettier-plugin-ember-template-tag: 0.3.1
+    transitivePeerDependencies:
+      - eslint-config-prettier
+      - eslint-import-resolver-webpack
+      - supports-color
+    dev: true
+
+  /@nullvoxpopuli/eslint-configs/3.1.2_bbtlhgum6n7xp33ncdguuetboi:
+    resolution: {integrity: sha512-4W1LVzP7todgI8HPmHV9cBPC/opJCW3/fMXUJN/lKfTZ95cudS+vSJSwXdiEFLWy8mAUTdZRQHGBkE8SRacSZg==}
+    engines: {node: '>= v16.0.0'}
+    peerDependencies:
+      '@babel/core': ^7.20.12
+      '@babel/eslint-parser': ^7.19.1
+      '@typescript-eslint/eslint-plugin': ^5.51.0
+      '@typescript-eslint/parser': ^5.51.0
+      eslint: ^7.0.0 || ^8.0.0
+      eslint-plugin-ember: ^11.4.6
+      eslint-plugin-qunit: ^7.3.4
+      prettier: ^2.8.4
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@babel/eslint-parser':
+        optional: true
+      '@typescript-eslint/eslint-plugin':
+        optional: true
+      '@typescript-eslint/parser':
+        optional: true
+      eslint-plugin-ember:
+        optional: true
+      eslint-plugin-qunit:
+        optional: true
+      prettier:
+        optional: true
+    dependencies:
+      '@babel/core': 7.20.12
+      '@babel/eslint-parser': 7.19.1_b3mcivpi6zqbotlvqqcfprcnry
+      '@typescript-eslint/eslint-plugin': 5.50.0_go4drrxstycfikanvu45pi4vgq
+      '@typescript-eslint/parser': 5.50.0_4vsywjlpuriuw3tl5oq6zy5a64
+      cosmiconfig: 8.0.0
+      eslint: 8.33.0
+      eslint-import-resolver-typescript: 3.5.3_ohdts44xlqyeyrlje4qnefqeay
+      eslint-plugin-decorator-position: 5.0.2_crxq4lgcdsr4eamkidcj6wssqe
+      eslint-plugin-ember: 11.4.6_eslint@8.33.0
+      eslint-plugin-import: 2.27.5_nowqz4jutkd4a233czbfk7jsgu
+      eslint-plugin-json: 3.1.0
+      eslint-plugin-n: 15.6.1_eslint@8.33.0
+      eslint-plugin-prettier: 4.2.1_6xprzernlpxwjedpj2snzq4bpq
+      eslint-plugin-simple-import-sort: 10.0.0_eslint@8.33.0
+      prettier: 2.8.3
+      prettier-plugin-ember-template-tag: 0.3.2
     transitivePeerDependencies:
       - eslint-config-prettier
       - eslint-import-resolver-webpack
@@ -5451,6 +5451,11 @@ packages:
     resolution: {integrity: sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==}
     deprecated: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
     requiresBuild: true
+
+  /core-js/3.27.2:
+    resolution: {integrity: sha512-9ashVQskuh5AZEZ1JdQWp1GqSoC1e1G87MzRqg2gIfVAQ7Qn9K+uFj8EcniUFA4P2NLZfV+TOlX1SzoKfo+s7w==}
+    requiresBuild: true
+    dev: true
 
   /core-object/3.1.5:
     resolution: {integrity: sha512-sA2/4+/PZ/KV6CKgjrVrrUVBKCkdDO02CUlQ0YKTQoYUwPYNOtOAcWlbYhd5v/1JqYaA6oZ4sDlOU4ppVw6Wbg==}
@@ -11634,6 +11639,20 @@ packages:
       - supports-color
     dev: true
 
+  /prettier-plugin-ember-template-tag/0.3.2:
+    resolution: {integrity: sha512-L/15ujsvuOpuIB9y9XJJs/QOPgdot76T0U1Q34C19igS1lsaL/cdRw8rXIVC5Z2x362yZI33Qodo//7kK7ItkA==}
+    engines: {node: 14.* || 16.* || >= 18}
+    dependencies:
+      '@babel/core': 7.20.12
+      '@glimmer/syntax': 0.84.2
+      ember-cli-htmlbars: 6.2.0
+      ember-template-imports: 3.4.1
+      prettier: 2.8.3
+      ts-replace-all: 1.0.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /prettier/2.8.3:
     resolution: {integrity: sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==}
     engines: {node: '>=10.13.0'}
@@ -13879,6 +13898,12 @@ packages:
     dependencies:
       compatfactory: 2.0.9_typescript@4.9.5
       typescript: 4.9.5
+    dev: true
+
+  /ts-replace-all/1.0.0:
+    resolution: {integrity: sha512-6uBtdkw3jHXkPtx/e9xB/5vcngMm17CyJYsS2YZeQ+9FdRnt6Ev5g931Sg2p+dxbtMGoCm13m3ax/obicTZIkQ==}
+    dependencies:
+      core-js: 3.27.2
     dev: true
 
   /tsconfig-paths/3.14.1:
