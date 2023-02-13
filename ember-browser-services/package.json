@@ -65,7 +65,7 @@
     "@types/ember__object": "^4.0.0",
     "@types/ember__service": "^4.0.0",
     "@types/qunit": "^2.11.3",
-    "@typescript-eslint/eslint-plugin": "5.50.0",
+    "@typescript-eslint/eslint-plugin": "5.51.0",
     "@typescript-eslint/parser": "^5.50.0",
     "concurrently": "7.6.0",
     "ember-source": "3.8.0",
