@@ -26,7 +26,7 @@ importers:
       '@babel/preset-typescript': 7.18.6
       '@embroider/addon-dev': 3.0.0
       '@embroider/addon-shim': ^1.3.0
-      '@nullvoxpopuli/eslint-configs': 3.1.2
+      '@nullvoxpopuli/eslint-configs': 3.1.3
       '@types/ember__application': ^4.0.0
       '@types/ember__engine': ^4.0.0
       '@types/ember__object': ^4.0.0
@@ -61,7 +61,7 @@ importers:
       '@babel/plugin-transform-typescript': 7.20.13_@babel+core@7.20.12
       '@babel/preset-typescript': 7.18.6_@babel+core@7.20.12
       '@embroider/addon-dev': 3.0.0_rollup@3.12.1
-      '@nullvoxpopuli/eslint-configs': 3.1.2_uc65k6uc53xevpexlkf4towjt4
+      '@nullvoxpopuli/eslint-configs': 3.1.3_uc65k6uc53xevpexlkf4towjt4
       '@types/ember__application': 4.0.5_@babel+core@7.20.12
       '@types/ember__engine': 4.0.4_@babel+core@7.20.12
       '@types/ember__object': 4.0.5_@babel+core@7.20.12
@@ -2167,8 +2167,8 @@ packages:
       - supports-color
     dev: true
 
-  /@nullvoxpopuli/eslint-configs/3.1.2_uc65k6uc53xevpexlkf4towjt4:
-    resolution: {integrity: sha512-4W1LVzP7todgI8HPmHV9cBPC/opJCW3/fMXUJN/lKfTZ95cudS+vSJSwXdiEFLWy8mAUTdZRQHGBkE8SRacSZg==}
+  /@nullvoxpopuli/eslint-configs/3.1.3_uc65k6uc53xevpexlkf4towjt4:
+    resolution: {integrity: sha512-55sKdkcewceBRUMoF5HSv5cbHX0ZIHkv6ObpZha0g73U7leR26sGIAO2Vxxnu0fmktwmMVJBjQvq7jpqO0VJ9A==}
     engines: {node: '>= v16.0.0'}
     peerDependencies:
       '@babel/core': ^7.20.12
