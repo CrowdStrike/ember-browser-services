@@ -3,10 +3,8 @@ description: Setup node and install dependencies using pnpm
 runs:
   using: "composite"
   steps:
-    - uses: pnpm/action-setup@v2.2.4
-      with:
-        version: 7
-    - uses: actions/setup-node@v3
+    - uses: pnpm/action-setup@v4
+    - uses: actions/setup-node@v4
       with:
         cache: 'pnpm'
     - name: 'Install dependencies'
