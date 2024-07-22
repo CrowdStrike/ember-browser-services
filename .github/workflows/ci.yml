@@ -121,9 +121,10 @@ jobs:
           - ember-lts-3.28
           - ember-4.0
           - ember-4.4
-          - ember-release
-          - ember-beta
-          - ember-canary
+          # TODO: re-enable when @ember/string issue has been resolved
+          # - ember-release
+          # - ember-beta
+          # - ember-canary
           - embroider-safe
           - embroider-optimized
 
