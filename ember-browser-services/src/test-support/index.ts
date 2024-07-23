@@ -9,7 +9,6 @@ import {
   FakeLocalStorageService,
   FakeSessionStorageService,
 } from './-private/web-storage';
-import { patchWindow } from './window-mock-augments';
 
 import type { RecursivePartial } from '../types';
 
@@ -38,10 +37,7 @@ export function setupBrowserFakes(hooks: NestedHooks, options: Fakes): void {
     };
 
     if (options.window) {
-      // default, can still be overwritten
-      // see: https://github.com/kaliber5/ember-window-mock/issues/175
-      let patched = patchWindow(window);
-      let service = maybeMake(options.window, patched);
+      let service = maybeMake(options.window, window);
 
       owner.register('service:browser/window', service);
     }
@@ -105,11 +101,6 @@ export function maybeMake<
 
 // we are already using ember-window-mock, so the proxy internal to that package will
 // "just handle" setting stuff on the window
-//
-// NOTE:
-//  - Location implementation is incomplete:
-//     https://github.com/kaliber5/ember-window-mock/blob/2b8fbf581fc65e7f5455cd291497a3fdc2efdaf5/addon-test-support/-private/mock/location.js#L23
-//     - does not allow setting "origin"
 function applyStub(root: any, partial?: any) {
   if (!partial) return root;
 
