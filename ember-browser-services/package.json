@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "@embroider/addon-shim": "^1.3.0",
-    "ember-window-mock": "^1.0.0"
+    "ember-window-mock": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.24.9",

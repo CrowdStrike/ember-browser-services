@@ -27,8 +27,8 @@ importers:
         specifier: ^1.3.0
         version: 1.8.9
       ember-window-mock:
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.1
+        version: 1.0.1
     devDependencies:
       '@babel/core':
         specifier: 7.24.9
@@ -6591,8 +6591,8 @@ packages:
       - supports-color
     dev: true
 
-  /ember-window-mock@1.0.0:
-    resolution: {integrity: sha512-zaTxOj72fGUXcOC6ib/+JC9SfXQepRPATN1qlyxPEaMN8qnCb3A0MmnBVuXazR6TS2HSxe7pCwoee5dByEVx3A==}
+  /ember-window-mock@1.0.1:
+    resolution: {integrity: sha512-K7o0o+t1DEWLsaw+TtS/D2t31pPUTYdabG6AKKKxJxZdgKNLwyMtlK7+X2UV0kRnr0CgiOeOMenvck0+8XbDmA==}
     dependencies:
       '@embroider/addon-shim': 1.8.9
       '@embroider/macros': 1.16.5
