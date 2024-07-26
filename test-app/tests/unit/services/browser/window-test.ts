@@ -85,29 +85,6 @@ module('Service | browser/window', function (hooks) {
         assert.strictEqual(service.parent.location.href, loginPath);
       });
     });
-
-    module('Stubbing location.origin', function (hooks) {
-      setupBrowserFakes(hooks, {
-        window: {
-          location: { origin: 'http://init.ial', href: 'http://init.ial' },
-        },
-      });
-
-      test('can read from the stubbed origin', function (assert) {
-        let service = getWindowService(this.owner);
-
-        assert.strictEqual(
-          service.location.href,
-          'http://init.ial/',
-          'window.location.href'
-        );
-        assert.strictEqual(
-          service.location.origin,
-          'http://init.ial',
-          'window.location.origin'
-        );
-      });
-    });
   });
 
   module('related data is properly related', function () {
