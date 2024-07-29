@@ -1,5 +1,15 @@
 # ember-browser-services
 
+## 5.0.0
+
+### Major Changes
+
+- [#397](https://github.com/CrowdStrike/ember-browser-services/pull/397) [`606e0f8fe4e6ef3ff527cb432c65af2fb9d631d4`](https://github.com/CrowdStrike/ember-browser-services/commit/606e0f8fe4e6ef3ff527cb432c65af2fb9d631d4) Thanks [@simonihmig](https://github.com/simonihmig)! - Drop support for Ember < 4.8
+
+- [#399](https://github.com/CrowdStrike/ember-browser-services/pull/399) [`562c673596fdcad78a4f7f5b89877b2ff3a18073`](https://github.com/CrowdStrike/ember-browser-services/commit/562c673596fdcad78a4f7f5b89877b2ff3a18073) Thanks [@simonihmig](https://github.com/simonihmig)! - Update ember-window-mock, drop unneeded glue code
+
+  There is a potentially breaking change, as you cannot mock `window.location.origin` directly anymore. But this should not restrict you, as you can set `window.location.href`, and `origin` will be correctly reflected. Having `origin` not be aligned with `href` can never happen in reality, since `origin` is a read-only property, so having these diverge in tests is not really useful.
+
 ## 4.0.4
 
 ### Patch Changes
