@@ -39,20 +39,24 @@ export function setupBrowserFakes(hooks: NestedHooks, options: Fakes): void {
     if (options.window) {
       let service = maybeMake(options.window, window);
 
+      owner.unregister('service:browser/window');
       owner.register('service:browser/window', service);
     }
 
     if (options.document) {
       let service = maybeMake(options.document, window.document);
 
+      owner.unregister('service:browser/document');
       owner.register('service:browser/document', service);
     }
 
     if (options.localStorage) {
+      owner.unregister('service:browser/local-storage');
       owner.register('service:browser/local-storage', FakeLocalStorageService);
     }
 
     if (options.sessionStorage) {
+      owner.unregister('service:browser/session-storage');
       owner.register(
         'service:browser/session-storage',
         FakeSessionStorageService
@@ -62,6 +66,7 @@ export function setupBrowserFakes(hooks: NestedHooks, options: Fakes): void {
     if (options.navigator) {
       let service = maybeMake(options.navigator, window.navigator);
 
+      owner.unregister('service:browser/navigator');
       owner.register('service:browser/navigator', service);
     }
   });
