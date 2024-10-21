@@ -1,6 +1,5 @@
 ---
 "ember-browser-services": patch
-"test-app": patch
 ---
 
 Unregister services before they are registered in `setupBrowserFakes()` 
