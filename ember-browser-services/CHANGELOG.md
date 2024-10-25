@@ -1,5 +1,13 @@
 # ember-browser-services
 
+## 5.0.1
+
+### Patch Changes
+
+- [#425](https://github.com/CrowdStrike/ember-browser-services/pull/425) [`71e831a`](https://github.com/CrowdStrike/ember-browser-services/commit/71e831ab0949664868370d5e3d35139f0c61eea5) Thanks [@MrChocolatine](https://github.com/MrChocolatine)! - Unregister services before they are registered in `setupBrowserFakes()`
+
+  Fixes https://github.com/CrowdStrike/ember-browser-services/issues/413
+
 ## 5.0.0
 
 ### Major Changes
