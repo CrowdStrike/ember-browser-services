@@ -318,7 +318,7 @@ importers:
         version: 0.3.0
       qunit-dom:
         specifier: ^3.2.0
-        version: 3.2.1
+        version: 3.3.0
       remark-cli:
         specifier: ^11.0.0
         version: 11.0.0
@@ -12273,8 +12273,8 @@ packages:
       - supports-color
     dev: true
 
-  /qunit-dom@3.2.1:
-    resolution: {integrity: sha512-+qSm8zQ7hPA9NijmTDVsUFNGEFP/K+DTymjlsU01O3NhkGtb9rsZRztJXwaiAlmVSX4vSzjydPxpZCRhpWIq4A==}
+  /qunit-dom@3.3.0:
+    resolution: {integrity: sha512-sGPhNbZ/3gPbH3rp7PxnzqXuh6cyN/AG/vO/X9k0IYlsoBLi83MU6PdtSw/KiWLV8X/32jxD6fbeP9vjNAY4Dw==}
     dependencies:
       dom-element-descriptors: 0.5.1
     dev: true
