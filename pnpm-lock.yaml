@@ -270,7 +270,7 @@ importers:
         version: 7.0.0
       ember-qunit:
         specifier: ^8.1.0
-        version: 8.1.1(@ember/test-helpers@3.3.1)(ember-source@5.12.0)(qunit@2.22.0)
+        version: 8.1.1(@ember/test-helpers@3.3.1)(ember-source@5.12.0)(qunit@2.23.1)
       ember-resolver:
         specifier: ^11.0.1
         version: 11.0.1(ember-source@5.12.0)
@@ -312,7 +312,7 @@ importers:
         version: 2.8.8
       qunit:
         specifier: ^2.21.1
-        version: 2.22.0
+        version: 2.23.1
       qunit-console-grouper:
         specifier: ^0.3.0
         version: 0.3.0
@@ -7529,7 +7529,7 @@ packages:
       - supports-color
     dev: true
 
-  /ember-qunit@8.1.1(@ember/test-helpers@3.3.1)(ember-source@5.12.0)(qunit@2.22.0):
+  /ember-qunit@8.1.1(@ember/test-helpers@3.3.1)(ember-source@5.12.0)(qunit@2.23.1):
     resolution: {integrity: sha512-nT+6s74j3BKNn+QQY/hINC3Xw3kn0NF0cU9zlgVQmCBWoyis1J24xWrY2LFOMThPmF6lHqcrUb5JwvBD4BXEXg==}
     peerDependencies:
       '@ember/test-helpers': '>=3.0.3'
@@ -7541,7 +7541,7 @@ packages:
       '@embroider/macros': 1.16.9
       ember-cli-test-loader: 3.1.0
       ember-source: 5.12.0(@glimmer/component@1.1.2)(rsvp@4.8.5)(webpack@5.96.1)
-      qunit: 2.22.0
+      qunit: 2.23.1
       qunit-theme-ember: 1.0.0
     transitivePeerDependencies:
       - '@glint/template'
@@ -12199,8 +12199,8 @@ packages:
     resolution: {integrity: sha512-vdMVVo6ecdCkWttMTKeyq1ZTLGHcA6zdze2zhguNuc3ritlJMhOXY5RDseqazOwqZVfCg3rtlmL3fMUyIzUyFQ==}
     dev: true
 
-  /qunit@2.22.0:
-    resolution: {integrity: sha512-wPYvAvpjTL3zlUeyCX75T8gfZfdVXZa8y1EVkGe/XZNORIsCH/WI2X8R2KlemT921X9EKSZUL6CLGSPC7Ks08g==}
+  /qunit@2.23.1:
+    resolution: {integrity: sha512-CGrsGy7NhkQmfiyOixBpbexh2PT7ekIb35uWiBi/hBNdTJF1W98UonyACFJJs8UmcP96lH+YJlX99dYZi5rZkg==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
