@@ -266,8 +266,8 @@ importers:
         specifier: ^2.1.2
         version: 2.1.2(@babel/core@7.26.0)
       ember-page-title:
-        specifier: ^7.0.0
-        version: 7.0.0
+        specifier: ^8.0.0
+        version: 8.2.3(ember-source@5.12.0)
       ember-qunit:
         specifier: ^8.1.0
         version: 8.1.1(@ember/test-helpers@3.3.1)(ember-source@5.12.0)(qunit@2.23.1)
@@ -7512,11 +7512,15 @@ packages:
       - supports-color
     dev: true
 
-  /ember-page-title@7.0.0:
-    resolution: {integrity: sha512-oq6+HYbeVD/BnxIO5AkP4gWlsatdgW2HFO10F8+XQiJZrwa7cC7Wm54JNGqQkavkDQTgNSiy1Fe2NILJ14MmAg==}
-    engines: {node: 12.* || 14.* || >= 16}
+  /ember-page-title@8.2.3(ember-source@5.12.0):
+    resolution: {integrity: sha512-9XH4EVPCpSCyXRsLPzdDydU4HgQnaVeJJTrRF0WVh5bZERI9DgxuHv1NPmZU28todHRH91KcBc5nx8kIVJmqUw==}
+    engines: {node: 16.* || >= 18}
+    peerDependencies:
+      ember-source: '>= 3.28.0'
     dependencies:
-      ember-cli-babel: 7.26.11
+      '@embroider/addon-shim': 1.9.0
+      '@simple-dom/document': 1.4.0
+      ember-source: 5.12.0(@glimmer/component@1.1.2)(rsvp@4.8.5)(webpack@5.97.1)
     transitivePeerDependencies:
       - supports-color
     dev: true
