@@ -59,7 +59,7 @@
     "@babel/plugin-transform-typescript": "7.26.3",
     "@babel/preset-typescript": "7.26.0",
     "@embroider/addon-dev": "3.2.0",
-    "@nullvoxpopuli/eslint-configs": "3.2.2",
+    "@nullvoxpopuli/eslint-configs": "4.3.0",
     "@types/ember__application": "^4.0.0",
     "@types/ember__engine": "^4.0.0",
     "@types/ember__object": "^4.0.0",
