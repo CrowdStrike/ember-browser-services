@@ -71,7 +71,7 @@ importers:
         version: 4.0.9(@babel/core@7.26.0)
       '@types/qunit':
         specifier: ^2.11.3
-        version: 2.19.10
+        version: 2.19.13
       '@typescript-eslint/eslint-plugin':
         specifier: 5.55.0
         version: 5.55.0(@typescript-eslint/parser@5.62.0)(eslint@8.57.0)(typescript@4.9.5)
@@ -213,10 +213,10 @@ importers:
         version: 4.0.7(@babel/core@7.26.0)
       '@types/htmlbars-inline-precompile':
         specifier: ^3.0.0
-        version: 3.0.3
+        version: 3.0.4
       '@types/qunit':
         specifier: ^2.19.0
-        version: 2.19.10
+        version: 2.19.13
       '@types/rsvp':
         specifier: ^4.0.4
         version: 4.0.9
@@ -4043,7 +4043,7 @@ packages:
       '@types/ember-resolver': 5.0.13(@babel/core@7.26.0)
       '@types/ember__test': 4.0.6(@babel/core@7.26.0)
       '@types/ember__test-helpers': 2.9.1(@babel/core@7.26.0)(ember-source@5.12.0)(webpack@5.97.1)
-      '@types/qunit': 2.19.10
+      '@types/qunit': 2.19.13
     transitivePeerDependencies:
       - '@babel/core'
       - '@glint/template'
@@ -4313,8 +4313,8 @@ packages:
       '@types/unist': 2.0.10
     dev: true
 
-  /@types/htmlbars-inline-precompile@3.0.3:
-    resolution: {integrity: sha512-utarMsjpGrHc67F0o4AitUwNOW8YWeF2JfAixWQoZIOy/tyIOxw/qHHQS5AnuazDa1Rt2Mlr9OlHDFD72QJMrA==}
+  /@types/htmlbars-inline-precompile@3.0.4:
+    resolution: {integrity: sha512-7/25yggmCJxOqJwZHktlt43JdLy9Vt4mtGpTIOOrHQAUpm2Z4ADJ8mg6xS10Ar2EwApTu3v87oeAT9urDZcJDw==}
     dev: true
 
   /@types/http-errors@2.0.4:
@@ -4398,8 +4398,8 @@ packages:
     resolution: {integrity: sha512-uXHQKES6DQKKCLh441Xv/dwxOq1TVS3JPUMlEqoEglvlhR6Mxnlew/Xq/LRVHpLyk7iK3zODe1qYHIMltO7XGg==}
     dev: true
 
-  /@types/qunit@2.19.10:
-    resolution: {integrity: sha512-gVB+rxvxmbyPFWa6yjjKgcumWal3hyqoTXI0Oil161uWfo1OCzWZ/rnEumsx+6uVgrwPrCrhpQbLkzfildkSbg==}
+  /@types/qunit@2.19.13:
+    resolution: {integrity: sha512-N4xp3v4s7f0jb2Oij6+6xw5QhH7/IgHCoGIFLCWtbEWoPkGYp8Te4mIwIP21qaurr6ed5JiPMiy2/ZoiGPkLIw==}
     dev: true
 
   /@types/range-parser@1.2.7:
